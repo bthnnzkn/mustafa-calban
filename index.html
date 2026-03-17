@@ -195,7 +195,15 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 0;}
 (function(){
 var smEl = document.getElementById('sm-slide');
 if(!smEl) return;
-smEl.style.backgroundImage = "url('https://drive.google.com/thumbnail?id=PLACEHOLDER&sz=w1200')";
+fetch("https://www.googleapis.com/drive/v3/files?q='16MSEdtXkSUmfxigYBYBQjdM_-2SGzywd'+in+parents+and+mimeType+contains+'image/'&key=AIzaSyC3O2znUU5SlWP4oqSbTPHRVQgSUBGZf6E&fields=files(id)&pageSize=20")
+.then(r=>r.json()).then(function(data){
+  if(!data.files||!smEl)return;
+  var photos=data.files.map(function(f){return'https://drive.google.com/thumbnail?id='+f.id+'&sz=w1200';});
+  var cur=0;
+  function show(n){smEl.style.opacity='0';setTimeout(function(){smEl.style.backgroundImage='url('+photos[n]+')';smEl.style.opacity='1';},400);}
+  show(0);
+  setInterval(function(){cur=(cur+1)%photos.length;show(cur);},2800);
+});
 })();
 </script>
 <section class="section services-bg" id="services">
