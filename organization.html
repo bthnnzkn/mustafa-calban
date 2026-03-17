@@ -95,7 +95,20 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.4);}
     <p class="section-sub">Every detail curated with precision â from the first flower to the last bite.</p>
     <div class="grid3">
       <div class="card"><div class="card-img" style="background-image:url('https://drive.google.com/thumbnail?id=1TF1e8NmlHR5C4Z4Xdqlh9ZKUgXDRkOKs&sz=w800');background-size:cover;background-position:center;">ð¸</div><div class="card-body"><div class="card-title">Floral & Table Design</div><div class="card-desc">Stunning centerpieces, custom floral arrangements, and table settings that transform any venue into something magical.</div></div></div>
-      <div class="card"><div class="card-img" style="background:linear-gradient(135deg,#f0f4f9,#e8f0f8)">ð½ï¸</div><div class="card-body"><div class="card-title">Catering & Menu</div><div class="card-desc">Curated menus from top chefs. From cocktail hours to full sit-down dinners â we coordinate every bite.</div></div></div>
+      <div class="card"><div class="card-img" style="position:relative;overflow:hidden;padding:0;">
+<div id="cat-slide" style="position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity .6s ease;"></div>
+<script>
+(function(){
+var ids=['176p0FS2yLxnret9R-Kze7WKzLCVp9N0w','1BARNKMb5nxRtVkgw2qOPRdP_b8EqfFy2','1u9kqn3KcK0Hp1AMcmDKJhJM15tUsUDAG','1p1W6LrrXScHqC3yyNPnS-gr91ef2vFv_','1jm-dT2h6hvk7SeWs3jt8TT25H5mynt0o'];
+var el=document.getElementById('cat-slide');
+if(!el)return;
+var photos=ids.map(function(id){return'https://drive.google.com/thumbnail?id='+id+'&sz=w800';});
+var cur=0;
+function show(n){el.style.opacity='0';setTimeout(function(){el.style.backgroundImage='url('+photos[n]+')';el.style.opacity='1';},400);}
+show(0);
+setInterval(function(){cur=(cur+1)%photos.length;show(cur);},2800);
+})();
+</script>ð½ï¸</div><div class="card-body"><div class="card-title">Catering & Menu</div><div class="card-desc">Curated menus from top chefs. From cocktail hours to full sit-down dinners â we coordinate every bite.</div></div></div>
       <div class="card"><div class="card-img" style="background:linear-gradient(135deg,#f5f0f9,#ede4f5)">â¨</div><div class="card-body"><div class="card-title">Venue & Decor</div><div class="card-desc">Complete venue transformation with custom decor, backdrops, balloon art, and themed installations.</div></div></div>
       <div class="card"><div class="card-img" style="background:linear-gradient(135deg,#fdf9e8,#f9f0d0)">ð¡</div><div class="card-body"><div class="card-title">Lighting & Ambiance</div><div class="card-desc">Mood lighting, fairy lights, uplighting and audiovisual setups that set the perfect atmosphere.</div></div></div>
       <div class="card"><div class="card-img" style="background:linear-gradient(135deg,#f0f9f5,#e0f5ec)">ð¸</div><div class="card-body"><div class="card-title">Photo & Video</div><div class="card-desc">Professional photography and videography to preserve every moment â from candids to the highlight reel.</div></div></div>
