@@ -231,7 +231,7 @@ fetch("https://www.googleapis.com/drive/v3/files?q='16MSEdtXkSUmfxigYBYBQjdM_-2S
 (function(){
 var reEl = document.getElementById('re-slide');
 if(!reEl) return;
-var FOLDER_ID = 'REAL_ESTATE_FOLDER_ID';
+var FOLDER_ID = '1ulz7E2cf9nkxF33K67Dr6gjvrOEqeo-R';
 fetch("https://www.googleapis.com/drive/v3/files?q='"+FOLDER_ID+"'+in+parents+and+mimeType+contains+'image/'&key=AIzaSyC3O2znUU5SlWP4oqSbTPHRVQgSUBGZf6E&fields=files(id)&pageSize=20")
 .then(function(r){return r.json();}).then(function(data){
   if(!data.files||!reEl)return;
