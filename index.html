@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mustafa Çalban — Photography</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=EB+Garamond:ital,wght@0,400;1,400&family=Josefin+Sans:wght@100;200;300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--ink:#0d0c0b;--cream:#f5f0e8;--gold:#b8965a;--gold2:#d4af78;--warm:#1a1814;--rule:rgba(184,150,90,0.25);}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--cream);font-family:'EB Garamond',serif;overflow-x:hidden;}
+.cursor{width:6px;height:6px;background:var(--gold);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
+.cursor-ring{width:32px;height:32px;border:1px solid rgba(184,150,90,0.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .15s ease;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:2.2rem 4rem;display:flex;justify-content:space-between;align-items:center;}
+nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,12,11,0.95) 0%,rgba(13,12,11,0) 100%);pointer-events:none;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;letter-spacing:0.25em;text-transform:uppercase;position:relative;z-index:1;color:var(--cream);}
+.nav-logo span{color:var(--gold);font-style:italic;}
+.nav-right{display:flex;gap:3rem;align-items:center;position:relative;z-index:1;}
+.nav-link{font-family:'Josefin Sans',sans-serif;font-size:0.6rem;font-weight:200;letter-spacing:0.35em;text-transform:uppercase;color:rgba(245,240,232,0.55);text-decoration:none;cursor:pointer;transition:color .3s;border:none;background:none;}
+.nav-link:hover{color:var(--gold);}
+.nav-access{font-family:'Josefin Sans',sans-serif;font-size:0.6rem;font-weight:200;letter-spacing:0.3em;text-transform:uppercase;border:1px solid var(--gold);color:var(--gold);padding:0.55rem 1.4rem;cursor:pointer;background:transparent;transition:all .4s;}
+.nav-access:hover{background:var(--gold);color:var(--ink);}
+.hero{height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;padding:0 4rem 5rem;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(184,150,90,0.06) 0%,transparent 60%),linear-gradient(160deg,#0d0c0b 0%,#1a1510 40%,#0d0c0b 100%);}
+.hero-letter{position:absolute;right:-0.05em;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-size:42vw;font-style:italic;color:rgba(184,150,90,0.04);line-height:1;pointer-events:none;user-select:none;}
+.hero-content{position:relative;z-index:2;max-width:700px;}
+.hero-eyebrow{font-family:'Josefin Sans',sans-serif;font-size:0.58rem;font-weight:200;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:1.5rem;margin-bottom:2rem;}
+.hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--gold);}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,6vw,6rem);font-weight:400;line-height:1.05;margin-bottom:2rem;}
+.hero-h1 em{font-style:italic;color:var(--gold2);}
+.hero-sub{font-family:'Josefin Sans',sans-serif;font-size:0.65rem;font-weight:100;letter-spacing:0.3em;text-transform:uppercase;color:rgba(245,240,232,0.4);line-height:2;margin-bottom:3rem;}
+.hero-cta{display:inline-flex;align-items:center;gap:1.5rem;cursor:pointer;background:none;border:none;color:var(--cream);padding:0;font-family:'Josefin Sans',sans-serif;font-size:0.62rem;font-weight:200;letter-spacing:0.35em;text-transform:uppercase;transition:gap .4s;}
+.hero-cta:hover{gap:2.5rem;color:var(--gold);}
+.hero-cta-line{width:50px;height:1px;background:currentColor;transition:width .4s;}
+.hero-cta:hover .hero-cta-line{width:80px;}
+.hero-scroll{position:absolute;right:4rem;bottom:5rem;z-index:2;display:flex;flex-direction:column;align-items:center;gap:1rem;}
+.scroll-label{font-family:'Josefin Sans',sans-serif;font-size:0.5rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(245,240,232,0.3);writing-mode:vertical-rl;}
+.scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,rgba(184,150,90,0.5),transparent);}
+.divider{display:flex;align-items:center;gap:2rem;padding:0 4rem;}
+.divider-line{flex:1;height:1px;background:var(--rule);}
+.divider-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;}
+.about{padding:8rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:center;}
+.about-num{font-family:'Playfair Display',serif;font-style:italic;font-size:8rem;color:rgba(184,150,90,0.1);line-height:1;margin-bottom:-2rem;}
+.about-label{font-family:'Josefin Sans',sans-serif;font-size:0.58rem;font-weight:200;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;}
+.about-h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,3rem);font-weight:400;line-height:1.2;margin-bottom:2rem;}
+.about-h2 em{font-style:italic;color:var(--gold2);}
+.about-right p{font-size:1.05rem;line-height:1.9;color:rgba(245,240,232,0.65);margin-bottom:1.5rem;}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem;border-top:1px solid var(--rule);padding-top:2rem;}
+.stat-num{font-family:'Playfair Display',serif;font-style:italic;font-size:2.2rem;color:var(--gold);}
+.stat-label{font-family:'Josefin Sans',sans-serif;font-size:0.58rem;font-weight:200;letter-spacing:0.3em;text-transform:uppercase;color:rgba(245,240,232,0.35);margin-top:0.3rem;}
+.gallery-section{padding:6rem 0;}
+.gallery-header{padding:0 4rem;margin-bottom:4rem;}
+.gallery-label{font-family:'Josefin Sans',sans-serif;font-size:0.58rem;font-weight:200;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.gallery-h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,3rem);font-weight:400;}
+.gallery-h2 em{font-style:italic;color:var(--gold2);}
+.gallery-mosaic{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;padding:0 4rem;}
+.gitem{overflow:hidden;position:relative;cursor:pointer;background:var(--warm);}
+.gitem:nth-child(1){grid-column:1/6;grid-row:1/3;aspect-ratio:4/5;}
+.gitem:nth-child(2){grid-column:6/9;aspect-ratio:3/2;}
+.gitem:nth-child(3){grid-column:9/13;aspect-ratio:4/3;}
+.gitem:nth-child(4){grid-column:6/10;aspect-ratio:1/1;}
+.gitem:nth-child(5){grid-column:10/13;aspect-ratio:1/1;}
+.gitem-inner{width:100%;height:100%;transition:transform .7s cubic-bezier(.25,.46,.45,.94);}
+.gitem:hover .gitem-inner{transform:scale(1.04);}
+.ph{width:100%;height:100%;display:flex;align-items:flex-end;padding:1.5rem;}
+.gitem:nth-child(1) .ph{background:linear-gradient(170deg,#1e1a14 0%,#2a2218 60%,#1a1510 100%);}
+.gitem:nth-child(2) .ph{background:linear-gradient(150deg,#141820 0%,#1c2230 100%);}
+.gitem:nth-child(3) .ph{background:linear-gradient(150deg,#18141c 0%,#241c2e 100%);}
+.gitem:nth-child(4) .ph{background:linear-gradient(150deg,#141c18 0%,#1c2820 100%);}
+.gitem:nth-child(5) .ph{background:linear-gradient(150deg,#1c1814 0%,#28201c 100%);}
+.gitem-label{font-family:'Josefin Sans',sans-serif;font-size:0.52rem;font-weight:200;letter-spacing:0.3em;text-transform:uppercase;color:rgba(245,240,232,0.2);}
+.gitem-hover{position:absolute;inset:0;background:rgba(13,12,11,0.6);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;opacity:0;transition:opacity .4s;}
+.gitem:hover .gitem-hover{opacity:1;}
+.gitem-hover-icon{width:44px;height:44px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:var(--gold);}
+.gitem-hover-text{font-family:'Josefin Sans',sans-serif;font-size:0.55rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);}
+.client-section{display:none;padding:8rem 4rem;}
+.client-section.open{display:block;}
+.client-header{margin-bottom:3rem;border-bottom:1px solid var(--rule);padding-bottom:2rem;}
+.client-greeting{font-family:'Josefin Sans',sans-serif;font-size:0.58rem;font-weight:200;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
+.client-name-display{font-family:'Playfair Display',serif;font-style:italic;font-size:2.5rem;}
+.client-instruction{font-family:'Josefin Sans',sans-serif;font-size:0.6rem;font-weight:200;letter-spacing:0.2em;color:rgba(245,240,232,0.35);margin-top:0.75rem;}
+.client-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;}
+.cphoto{aspect-ratio:3/4;position:relative;overflow:hidden;cursor:pointer;background:var(--warm);}
+.cphoto-inner{width:100%;height:100%;transition:transform .6s cubic-bezier(.25,.46,.45,.94);}
+.cphoto:hover .cphoto-inner{transform:scale(1.03);}
+.cph{width:100%;height:100%;}
+.cphoto:nth-child(1) .cph{background:linear-gradient(160deg,#1e1a14 0%,#2a2218 100%);}
+.cphoto:nth-child(2) .cph{background:linear-gradient(160deg,#141820 0%,#1e2530 100%);}
+.cphoto:nth-child(3) .cph{background:linear-gradient(160deg,#18141c 0%,#261e2e 100%);}
+.cphoto:nth-child(4) .cph{background:linear-gradient(160deg,#141c14 0%,#1e2a1e 100%);}
+.cphoto:nth-child(5) .cph{background:linear-gradient(160deg,#1c1814 0%,#2a2018 100%);}
+.cphoto:nth-child(6) .cph{background:linear-gradient(160deg,#14181c 0%,#1c2228 100%);}
+.cphoto:nth-child(7) .cph{background:linear-gradient(160deg,#1a141c 0%,#261a28 100%);}
+.cphoto:nth-child(8) .cph{background:linear-gradient(160deg,#141a18 0%,#1c2822 100%);}
+.cphoto-select{position:absolute;top:1rem;right:1rem;width:24px;height:24px;border:1px solid rgba(245,240,232,0.3);display:flex;align-items:center;justify-content:center;transition:all .3s;background:rgba(13,12,11,0.4);}
+.cphoto.sel .cphoto-select{background:var(--gold);border-color:var(--gold);}
+.check-mark{font-size:0.65rem;color:var(--ink);opacity:0;transition:opacity .2s;}
+.cphoto.sel .check-mark{opacity:1;}
+.cphoto-price{position:absolute;bottom:0.75rem;left:0.75rem;font-family:'Josefin Sans',sans-serif;font-size:0.55rem;font-weight:200;letter-spacing:0.2em;color:rgba(245,240,232,0.3);}
+.cart-bar{position:fixed;bottom:-100px;left:0;right:0;background:rgba(13,12,11,0.97);border-top:1px solid var(--gold);backdrop-filter:blur(20px);padding:1.5rem 4rem;display:flex;align-items:center;justify-content:space-between;z-index:200;transition:bottom .5s cubic-bezier(.25,.46,.45,.94);}
+.cart-bar.up{bottom:0;}
+.cart-count{font-family:'Playfair Display',serif;font-style:italic;font-size:1.4rem;color:var(--gold);}
+.cart-sub{font-family:'Josefin Sans',sans-serif;font-size:0.55rem;font-weight:200;letter-spacing:0.3em;text-transform:uppercase;color:rgba(245,240,232,0.35);margin-top:0.2rem;}
+.cart-buy{font-family:'Josefin Sans',sans-serif;font-size:0.62rem;font-weight:200;letter-spacing:0.4em;text-transform:uppercase;background:var(--gold);color:var(--ink);border:none;padding:1rem 2.5rem;cursor:pointer;transition:opacity .3s;}
+.cart-buy:hover{opacity:0.85;}
+.modal-overlay{display:none;position:fixed;inset:0;z-index:1000;background:rgba(13,12,11,0.92);backdrop-filter:blur(16px);align-items:center;justify-content:center;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:var(--warm);border:1px solid var(--rule);padding:4rem;min-width:400px;position:relative;animation:modalIn .4s cubic-bezier(.25,.46,.45,.94);}
+@keyframes modalIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+.modal-deco{position:absolute;top:-1px;left:50%;transform:translateX(-50%);width:60px;height:1px;background:var(--gold);}
+.modal-close{position:absolute;top:1.5rem;right:1.5rem;font-family:'Josefin Sans',sans-serif;font-size:0.55rem;font-weight:200;letter-spacing:0.3em;text-transform:uppercase;color:rgba(245,240,232,0.3);cursor:pointer;border:none;background:none;transition:color .3s;}
+.modal-close:hover{color:var(--cream);}
+.modal-label{font-family:'Josefin Sans',sans-serif;font-size:0.55rem;font-weight:200;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.modal-h{font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;margin-bottom:0.5rem;}
+.modal-p{font-family:'Josefin Sans',sans-serif;font-size:0.62rem;font-weight:200;letter-spacing:0.15em;color:rgba(245,240,232,0.4);margin-bottom:2.5rem;line-height:1.8;}
+.pin-row{display:flex;gap:0.75rem;justify-content:center;margin-bottom:2rem;}
+.pin-d{width:56px;height:68px;background:transparent;border:none;border-bottom:1px solid rgba(245,240,232,0.2);color:var(--cream);font-family:'Playfair Display',serif;font-style:italic;font-size:2rem;text-align:center;outline:none;transition:border-color .3s;}
+.pin-d:focus{border-color:var(--gold);}
+.pin-btn{width:100%;padding:1rem;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Josefin Sans',sans-serif;font-size:0.62rem;font-weight:200;letter-spacing:0.4em;text-transform:uppercase;cursor:pointer;transition:all .4s;margin-bottom:1rem;}
+.pin-btn:hover{background:var(--gold);color:var(--ink);}
+.pin-err{font-family:'Josefin Sans',sans-serif;font-size:0.58rem;letter-spacing:0.2em;color:#c0674a;text-align:center;min-height:1.2rem;margin-bottom:0.75rem;display:none;}
+.modal-note{font-family:'Josefin Sans',sans-serif;font-size:0.52rem;font-weight:200;letter-spacing:0.2em;color:rgba(245,240,232,0.2);text-align:center;}
+footer{border-top:1px solid var(--rule);padding:3rem 4rem;display:flex;justify-content:space-between;align-items:center;margin-top:4rem;}
+.foot-logo{font-family:'Playfair Display',serif;font-size:0.95rem;letter-spacing:0.25em;text-transform:uppercase;}
+.foot-logo em{font-style:italic;color:var(--gold);}
+.foot-copy{font-family:'Josefin Sans',sans-serif;font-size:0.52rem;font-weight:200;letter-spacing:0.25em;text-transform:uppercase;color:rgba(245,240,232,0.25);}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="cur-ring"></div>
+
+<nav>
+  <div class="nav-logo">M. <span>Çalban</span></div>
+  <div class="nav-right">
+    <button class="nav-link" onclick="scrollTo({top:document.querySelector('.about').offsetTop,behavior:'smooth'})">About</button>
+    <button class="nav-link" onclick="scrollTo({top:document.querySelector('.gallery-section').offsetTop,behavior:'smooth'})">Work</button>
+    <button class="nav-link">Contact</button>
+    <button class="nav-access" onclick="openModal()">Client Access</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-letter">M</div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Photography &amp; Visual Art</div>
+    <h1 class="hero-h1">Capturing<br><em>timeless</em><br>moments</h1>
+    <p class="hero-sub">Fine art photography · United States<br>Available worldwide for commissions</p>
+    <button class="hero-cta" onclick="openModal()">
+      <span class="hero-cta-line"></span>
+      View your gallery
+    </button>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-label">Scroll</div>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+
+<section class="about">
+  <div class="about-left">
+    <div class="about-num">01</div>
+    <div class="about-label">The Artist</div>
+    <h2 class="about-h2">A vision<br>beyond the <em>lens</em></h2>
+  </div>
+  <div class="about-right">
+    <p>Mustafa Çalban is a fine art photographer whose work explores the delicate interplay between light, shadow, and human emotion. Each frame is a deliberate composition — never accidental, always intentional.</p>
+    <p>With an eye for the extraordinary in the ordinary, Mustafa crafts images that endure long after the moment has passed.</p>
+    <div class="about-stats">
+      <div><div class="stat-num">200+</div><div class="stat-label">Sessions completed</div></div>
+      <div><div class="stat-num">8+</div><div class="stat-label">Years of experience</div></div>
+      <div><div class="stat-num">12</div><div class="stat-label">States covered</div></div>
+      <div><div class="stat-num">&#8734;</div><div class="stat-label">Stories told</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+
+<section class="gallery-section">
+  <div class="gallery-header">
+    <div class="gallery-label">02 — Selected Work</div>
+    <h2 class="gallery-h2">Recent <em>collections</em></h2>
+  </div>
+  <div class="gallery-mosaic">
+    <div class="gitem" onclick="openModal()">
+      <div class="gitem-inner"><div class="ph"><span class="gitem-label">Portrait</span></div></div>
+      <div class="gitem-hover"><div class="gitem-hover-icon">&#128274;</div><div class="gitem-hover-text">Client Access</div></div>
+    </div>
+    <div class="gitem" onclick="openModal()">
+      <div class="gitem-inner"><div class="ph"><span class="gitem-label">Landscape</span></div></div>
+      <div class="gitem-hover"><div class="gitem-hover-icon">&#128274;</div><div class="gitem-hover-text">Client Access</div></div>
+    </div>
+    <div class="gitem" onclick="openModal()">
+      <div class="gitem-inner"><div class="ph"><span class="gitem-label">Editorial</span></div></div>
+      <div class="gitem-hover"><div class="gitem-hover-icon">&#128274;</div><div class="gitem-hover-text">Client Access</div></div>
+    </div>
+    <div class="gitem" onclick="openModal()">
+      <div class="gitem-inner"><div class="ph"><span class="gitem-label">Wedding</span></div></div>
+      <div class="gitem-hover"><div class="gitem-hover-icon">&#128274;</div><div class="gitem-hover-text">Client Access</div></div>
+    </div>
+    <div class="gitem" onclick="openModal()">
+      <div class="gitem-inner"><div class="ph"><span class="gitem-label">Fine Art</span></div></div>
+      <div class="gitem-hover"><div class="gitem-hover-icon">&#128274;</div><div class="gitem-hover-text">Client Access</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="client-section" id="client-section">
+  <div class="divider" style="margin:0 0 4rem;padding:0;"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+  <div class="client-header">
+    <div class="client-greeting">03 — Private Gallery</div>
+    <div class="client-name-display" id="client-name-display">Welcome</div>
+    <div class="client-instruction">Select the photographs you wish to purchase · Click to select · Proceed to checkout below</div>
+  </div>
+  <div class="client-grid" id="client-grid">
+    <div class="cphoto" onclick="toggleSel(this)"><div class="cphoto-inner"><div class="cph"></div></div><div class="cphoto-select"><span class="check-mark">&#10003;</span></div><div class="cphoto-price">$25 / print</div></div>
+    <div class="cphoto" onclick="toggleSel(this)"><div class="cphoto-inner"><div class="cph"></div></div><div class="cphoto-select"><span class="check-mark">&#10003;</span></div><div class="cphoto-price">$25 / print</div></div>
+    <div class="cphoto" onclick="toggleSel(this)"><div class="cphoto-inner"><div class="cph"></div></div><div class="cphoto-select"><span class="check-mark">&#10003;</span></div><div class="cphoto-price">$25 / print</div></div>
+    <div class="cphoto" onclick="toggleSel(this)"><div class="cphoto-inner"><div class="cph"></div></div><div class="cphoto-select"><span class="check-mark">&#10003;</span></div><div class="cphoto-price">$25 / print</div></div>
+    <div class="cphoto" onclick="toggleSel(this)"><div class="cphoto-inner"><div class="cph"></div></div><div class="cphoto-select"><span class="check-mark">&#10003;</span></div><div class="cphoto-price">$25 / print</div></div>
+    <div class="cphoto" onclick="toggleSel(this)"><div class="cphoto-inner"><div class="cph"></div></div><div class="cphoto-select"><span class="check-mark">&#10003;</span></div><div class="cphoto-price">$25 / print</div></div>
+    <div class="cphoto" onclick="toggleSel(this)"><div class="cphoto-inner"><div class="cph"></div></div><div class="cphoto-select"><span class="check-mark">&#10003;</span></div><div class="cphoto-price">$25 / print</div></div>
+    <div class="cphoto" onclick="toggleSel(this)"><div class="cphoto-inner"><div class="cph"></div></div><div class="cphoto-select"><span class="check-mark">&#10003;</span></div><div class="cphoto-price">$25 / print</div></div>
+  </div>
+</section>
+
+<div class="cart-bar" id="cart-bar">
+  <div>
+    <div class="cart-count" id="cart-count">0 photographs selected</div>
+    <div class="cart-sub" id="cart-price">Total: $0.00</div>
+  </div>
+  <button class="cart-buy" onclick="checkout()">Purchase via Stripe &#8594;</button>
+</div>
+
+<footer>
+  <div class="foot-logo">Mustafa <em>Çalban</em></div>
+  <div class="foot-copy">&#169; 2025 · All rights reserved · United States</div>
+</footer>
+
+<div class="modal-overlay" id="modal-overlay" onclick="overlayClick(event)">
+  <div class="modal-box">
+    <div class="modal-deco"></div>
+    <button class="modal-close" onclick="closeModal()">Close &#10005;</button>
+    <div class="modal-label">Private Access</div>
+    <h2 class="modal-h">Your gallery<br>awaits</h2>
+    <p class="modal-p">Enter the 4-digit PIN provided<br>by Mustafa to access your private collection.</p>
+    <div class="pin-row">
+      <input class="pin-d" type="password" maxlength="1" id="d1" inputmode="numeric" oninput="pn(this,'d2')">
+      <input class="pin-d" type="password" maxlength="1" id="d2" inputmode="numeric" oninput="pn(this,'d3')">
+      <input class="pin-d" type="password" maxlength="1" id="d3" inputmode="numeric" oninput="pn(this,'d4')">
+      <input class="pin-d" type="password" maxlength="1" id="d4" inputmode="numeric" oninput="pn(this,null)">
+    </div>
+    <div class="pin-err" id="pin-err">Incorrect PIN — please try again</div>
+    <button class="pin-btn" onclick="checkPin()">Enter Gallery</button>
+    <div class="modal-note">Don't have a PIN? Reach out to Mustafa directly.</div>
+  </div>
+</div>
+
+<script>
+const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
+document.addEventListener('mousemove',e=>{
+  cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
+  setTimeout(()=>{ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';},80);
+});
+
+// ============================================
+// PIN VERITABANI — buraya musteri ekle/cikar
+// ============================================
+const CLIENTS={
+  '1234':{name:'Sarah & James',price:25},
+  '5678':{name:'Emma Johnson',price:15},
+  '9999':{name:'Demo Client',price:20},
+};
+
+let activeClient=null,selCount=0;
+
+function openModal(){document.getElementById('modal-overlay').classList.add('open');setTimeout(()=>document.getElementById('d1').focus(),100);}
+function closeModal(){document.getElementById('modal-overlay').classList.remove('open');resetPins();}
+function overlayClick(e){if(e.target===document.getElementById('modal-overlay'))closeModal();}
+function pn(el,nxt){if(el.value&&nxt)document.getElementById(nxt).focus();}
+function resetPins(){['d1','d2','d3','d4'].forEach(i=>document.getElementById(i).value='');document.getElementById('pin-err').style.display='none';}
+
+function checkPin(){
+  const pin=['d1','d2','d3','d4'].map(i=>document.getElementById(i).value).join('');
+  if(CLIENTS[pin]){
+    activeClient=CLIENTS[pin];
+    closeModal();
+    document.getElementById('client-name-display').textContent=activeClient.name;
+    document.querySelectorAll('.cphoto-price').forEach(el=>el.textContent='$'+activeClient.price+' / print');
+    document.getElementById('client-section').classList.add('open');
+    setTimeout(()=>document.getElementById('client-section').scrollIntoView({behavior:'smooth'}),200);
+  } else {
+    document.getElementById('pin-err').style.display='block';
+    resetPins();document.getElementById('d1').focus();
+  }
+}
+
+function toggleSel(el){
+  el.classList.toggle('sel');
+  selCount=document.querySelectorAll('.cphoto.sel').length;
+  const price=activeClient?selCount*activeClient.price:0;
+  document.getElementById('cart-count').textContent=selCount+' photograph'+(selCount!==1?'s':'')+' selected';
+  document.getElementById('cart-price').textContent='Total: $'+price.toFixed(2);
+  document.getElementById('cart-bar').classList.toggle('up',selCount>0);
+}
+
+function checkout(){
+  alert('Stripe checkout buraya gelecek!\n\n'+selCount+' foto — $'+(selCount*(activeClient?.price||20)).toFixed(2));
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter'&&document.getElementById('modal-overlay').classList.contains('open'))checkPin();
+  if(e.key==='Escape')closeModal();
+});
+</script>
+</body>
+</html>
