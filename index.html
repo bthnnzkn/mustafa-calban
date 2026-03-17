@@ -243,6 +243,42 @@ fetch("https://www.googleapis.com/drive/v3/files?q='"+FOLDER_ID+"'+in+parents+an
 });
 })();
 </script>
+<section style="padding:5rem 0;background:#fff;">
+<div class="container">
+<div class="section-eyebrow fade-up" style="color:#b8945a;">Our Work</div>
+<h2 class="section-h fade-up d1">Events &amp;<br><span style="font-style:italic;">Special Occasions.</span></h2>
+<div style="margin-top:3rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;" class="fade-up d2">
+<div>
+<div style="font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#b8945a;margin-bottom:1rem;">Service</div>
+<div style="font-size:2rem;font-weight:700;letter-spacing:-.04em;color:#1d1d1f;line-height:1.1;margin-bottom:.75rem;">Event Photography</div>
+<div style="font-size:.85rem;color:#6e6e73;line-height:1.75;max-width:380px;">From intimate weddings to milestone birthdays and corporate gatherings — we capture every emotion, every detail, every moment that matters. Our event photography tells the story of your special day with artistry, warmth, and precision that lasts a lifetime.</div>
+<div style="margin-top:2rem;padding-top:2rem;border-top:1px solid #d2d2d7;display:flex;gap:2rem;">
+<div><div style="font-size:1.4rem;font-weight:700;color:#1d1d1f;">500+</div><div style="font-size:.72rem;color:#6e6e73;text-transform:uppercase;letter-spacing:.08em;">Events</div></div>
+<div><div style="font-size:1.4rem;font-weight:700;color:#1d1d1f;">8+</div><div style="font-size:.72rem;color:#6e6e73;text-transform:uppercase;letter-spacing:.08em;">Years</div></div>
+<div><div style="font-size:1.4rem;font-weight:700;color:#1d1d1f;">2</div><div style="font-size:.72rem;color:#6e6e73;text-transform:uppercase;letter-spacing:.08em;">Cities</div></div>
+</div>
+</div>
+<div style="position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:12px;background:#111;">
+<div id="ev-slide" style="position:absolute;inset:0;transition:opacity .6s ease;background-size:cover;background-position:center;"></div>
+</div>
+</div>
+</div>
+</section>
+<script>
+(function(){
+var evEl = document.getElementById('ev-slide');
+if(!evEl) return;
+fetch("https://www.googleapis.com/drive/v3/files?q='1oEWLMiPyHM9owZxDgjnsxPH0AP1Cq6vS'+in+parents+and+mimeType+contains+'image/'&key=AIzaSyC3O2znUU5SlWP4oqSbTPHRVQgSUBGZf6E&fields=files(id)&pageSize=20")
+.then(function(r){return r.json();}).then(function(data){
+  if(!data.files||!data.files.length||!evEl)return;
+  var photos=data.files.map(function(f){return'https://drive.google.com/thumbnail?id='+f.id+'&sz=w1200';});
+  var cur=0;
+  function show(n){evEl.style.opacity='0';setTimeout(function(){evEl.style.backgroundImage='url('+photos[n]+')';evEl.style.opacity='1';},400);}
+  show(0);
+  setInterval(function(){cur=(cur+1)%photos.length;show(cur);},2800);
+});
+})();
+</script>
 <section class="section services-bg" id="services">
 <div class="container">
 <div class="section-eyebrow fade-up">Our Work</div>
