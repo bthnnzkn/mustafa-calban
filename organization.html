@@ -109,7 +109,20 @@ show(0);
 setInterval(function(){cur=(cur+1)%photos.length;show(cur);},2800);
 })();
 </script>ð½ï¸</div><div class="card-body"><div class="card-title">Catering & Menu</div><div class="card-desc">Curated menus from top chefs. From cocktail hours to full sit-down dinners â we coordinate every bite.</div></div></div>
-      <div class="card"><div class="card-img" style="background:linear-gradient(135deg,#f5f0f9,#ede4f5)">â¨</div><div class="card-body"><div class="card-title">Venue & Decor</div><div class="card-desc">Complete venue transformation with custom decor, backdrops, balloon art, and themed installations.</div></div></div>
+      <div class="card"><div class="card-img" style="position:relative;overflow:hidden;padding:0;">
+<div id="dec-slide" style="position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity .6s ease;"></div>
+<script>
+(function(){
+var ids=['1QpyXeu3LL3HB_2oju-yJXsHl93RQpHdA','1GXdyawtSI7qf9VhUVqJ8X5ERHZI0AW1V','1u3PHCFvfrpFXyMYNisOcx6i4BtHSlAhI'];
+var el=document.getElementById('dec-slide');
+if(!el)return;
+var photos=ids.map(function(id){return'https://drive.google.com/thumbnail?id='+id+'&sz=w800';});
+var cur=0;
+function show(n){el.style.opacity='0';setTimeout(function(){el.style.backgroundImage='url('+photos[n]+')';el.style.opacity='1';},400);}
+show(0);
+setInterval(function(){cur=(cur+1)%photos.length;show(cur);},2800);
+})();
+</script>â¨</div><div class="card-body"><div class="card-title">Venue & Decor</div><div class="card-desc">Complete venue transformation with custom decor, backdrops, balloon art, and themed installations.</div></div></div>
       <div class="card"><div class="card-img" style="background:linear-gradient(135deg,#fdf9e8,#f9f0d0)">ð¡</div><div class="card-body"><div class="card-title">Lighting & Ambiance</div><div class="card-desc">Mood lighting, fairy lights, uplighting and audiovisual setups that set the perfect atmosphere.</div></div></div>
       <div class="card"><div class="card-img" style="background:linear-gradient(135deg,#f0f9f5,#e0f5ec)">ð¸</div><div class="card-body"><div class="card-title">Photo & Video</div><div class="card-desc">Professional photography and videography to preserve every moment â from candids to the highlight reel.</div></div></div>
       <div class="card"><div class="card-img" style="background:linear-gradient(135deg,#f9f0f0,#f5e4e4)">ð</div><div class="card-body"><div class="card-title">Full Event Planning</div><div class="card-desc">End-to-end coordination. We handle vendors, timelines, and logistics so you can enjoy your special day.</div></div></div>
