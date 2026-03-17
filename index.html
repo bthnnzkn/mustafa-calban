@@ -161,7 +161,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 0;}
 <body>
 <div id="loader"><div class="loader-logo"><div class="loader-dot"></div>Midpoint Creative</div><div class="loader-bar"><div class="loader-fill" id="lfill"></div></div></div>
 <nav id="nav"><div class="nav-logo"><div class="nav-logo-dot"></div>Midpoint Creative</div><div class="nav-links"><a class="nav-a" href="#about">About</a><a class="nav-a" href="#services">Services</a><a class="nav-a" href="#gallery">Work</a><a class="nav-a" href="#team">Team</a><a class="nav-a" href="#contact">Contact</a><button class="nav-cta" onclick="openModal()">Client Access</button></div></nav>
-<section class="hero"><div class="hero-left"><div class="hero-eyebrow">Creative Agency &middot; Los Angeles &amp; Istanbul</div><h1 class="hero-h1">Shape your<br><span>presence.</span><br>Own your story.</h1><p class="hero-sub">We craft visual identities and manage digital presence for professionals who refuse to blend in &mdash; from lawyers to chefs, models to doctors.</p><div class="hero-btns"><button class="btn-solid" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Our Services</button><button class="btn-ghost" onclick="openModal()">Client Gallery</button></div></div><div class="hero-right"><div class="hero-photo-grid"><div class="hero-cell"><div class="hero-ph hph1" id="hp1"></div></div><div class="hero-cell"><div class="hero-ph hph2" id="hp2"></div></div><div class="hero-cell"><div class="hero-ph hph3" id="hp3"></div></div></div></div><div class="hero-scroll"><div class="hero-scroll-line"></div><div class="hero-scroll-txt">Scroll</div></div></section>
+<section class="hero"><div class="hero-left"><div class="hero-eyebrow">Creative Agency &middot; Los Angeles &amp; Istanbul</div><h1 class="hero-h1">Shape your<br><span>presence.</span><br>Own your story.</h1><p class="hero-sub">We craft visual identities and manage digital presence for professionals who refuse to blend in &mdash; from lawyers to chefs, models to doctors.</p><div class="hero-btns"><button class="btn-solid" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Our Services</button><button class="btn-ghost" onclick="openModal()">Client Gallery</button></div></div><div class="hero-right"><div id="hero-slider" style="width:100%;height:100%;position:relative;overflow:hidden;border-radius:18px;"><div id="hero-slide-img" style="position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity .8s ease;"></div></div></div><div class="hero-scroll"><div class="hero-scroll-line"></div><div class="hero-scroll-txt">Scroll</div></div></section>
 <div class="marquee"><div class="mq-track" id="mqtrack"></div></div>
 <section class="section" id="about"><div class="container"><div class="about-wrap"><div class="about-img-wrap fade-left"><div class="about-slide" id="about-slide"></div><div class="about-dots" id="about-dots"></div></div><div class="about-text"><div class="section-eyebrow fade-up">The Founder</div><h2 class="section-h fade-up d1">Mustafa Calban</h2><div class="about-title fade-up d2">Founder &amp; Creative Director, Midpoint Creative</div><p class="about-bio fade-up d2">Mustafa Calban is a Los Angeles-based entrepreneur and creative director with a rare eye for transforming personal brands into lasting cultural statements. Born from a vision to bridge global aesthetics with local sensibility, he founded Midpoint Creative to deliver something the industry rarely offers: craft with intention.</p><p class="about-bio fade-up d3">With a background spanning high-end photography, videography, and strategic social media management, Mustafa has built digital presences for professionals across every field &mdash; lawyers, physicians, restaurateurs, athletes, models, and beyond.</p><p class="about-bio fade-up d3" style="font-style:italic;color:var(--text3);font-size:.82rem;">Operating between Los Angeles and Istanbul &mdash; available worldwide.</p><div class="about-stats fade-up d4"><div><div class="stat-n">200+</div><div class="stat-l">Clients</div></div><div><div class="stat-n">8+</div><div class="stat-l">Years</div></div><div><div class="stat-n">2</div><div class="stat-l">Cities</div></div><div><div class="stat-n">&#8734;</div><div class="stat-l">Stories</div></div></div></div></div></div></div></div></section>
 
@@ -260,6 +260,27 @@ initSlider();initHero();initWork();
   }
   goTo(0);
   setInterval(function(){goTo((cur+1)%photos.length);},2500);
+})();
+</script>
+<script>
+(async function(){
+  const FOLDER = '100mgAmrIXj1fVbZ7DYUjsDlHFwv5Pemg';
+  const KEY = 'AIzaSyC3O2znUU5SlWP4oqSbTPHRVQgSUBGZf6E';
+  const r = await fetch("https://www.googleapis.com/drive/v3/files?q='"+FOLDER+"'+in+parents+and+mimeType+contains+'image/'&key="+KEY+"&fields=files(id)&pageSize=20");
+  const data = await r.json();
+  const el = document.getElementById('hero-slide-img');
+  if(!data.files || !el) return;
+  const photos = data.files.map(f => 'https://drive.google.com/thumbnail?id='+f.id+'&sz=w1200');
+  let cur = 0;
+  function show(n){
+    el.style.opacity = '0';
+    setTimeout(function(){
+      el.style.backgroundImage = 'url('+photos[n]+')';
+      el.style.opacity = '1';
+    }, 400);
+  }
+  show(0);
+  setInterval(function(){ cur = (cur+1) % photos.length; show(cur); }, 2800);
 })();
 </script></body>
 </html>
