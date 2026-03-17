@@ -3,321 +3,206 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mustafa Çalban — Photography</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=EB+Garamond:ital,wght@0,400;1,400&family=Josefin+Sans:wght@100;200;300&display=swap" rel="stylesheet">
+<title>Model & Store — Creative Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--ink:#0d0c0b;--cream:#f5f0e8;--gold:#b8965a;--gold2:#d4af78;--warm:#1a1814;--rule:rgba(184,150,90,0.25);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#ffffff;--bg2:#f5f5f7;--bg3:#fbfbfd;--text:#1d1d1f;--text2:#6e6e73;--text3:#aeaeb2;--gold:#b8945a;--gold-light:#e8d5b0;--border:#d2d2d7;--black:#000000;--radius:18px;}
 html{scroll-behavior:smooth;}
-body{background:var(--ink);color:var(--cream);font-family:'EB Garamond',serif;overflow-x:hidden;}
-.cursor{width:6px;height:6px;background:var(--gold);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
-.cursor-ring{width:32px;height:32px;border:1px solid rgba(184,150,90,0.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .15s ease;}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:2.2rem 4rem;display:flex;justify-content:space-between;align-items:center;}
-nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,12,11,0.95) 0%,rgba(13,12,11,0) 100%);pointer-events:none;}
-.nav-logo{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;letter-spacing:0.25em;text-transform:uppercase;position:relative;z-index:1;color:var(--cream);}
-.nav-logo span{color:var(--gold);font-style:italic;}
-.nav-right{display:flex;gap:3rem;align-items:center;position:relative;z-index:1;}
-.nav-link{font-family:'Josefin Sans',sans-serif;font-size:0.6rem;font-weight:200;letter-spacing:0.35em;text-transform:uppercase;color:rgba(245,240,232,0.55);text-decoration:none;cursor:pointer;transition:color .3s;border:none;background:none;}
-.nav-link:hover{color:var(--gold);}
-.nav-access{font-family:'Josefin Sans',sans-serif;font-size:0.6rem;font-weight:200;letter-spacing:0.3em;text-transform:uppercase;border:1px solid var(--gold);color:var(--gold);padding:0.55rem 1.4rem;cursor:pointer;background:transparent;transition:all .4s;}
-.nav-access:hover{background:var(--gold);color:var(--ink);}
-.hero{height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;padding:0 4rem 5rem;}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(184,150,90,0.06) 0%,transparent 60%),linear-gradient(160deg,#0d0c0b 0%,#1a1510 40%,#0d0c0b 100%);}
-.hero-letter{position:absolute;right:-0.05em;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-size:42vw;font-style:italic;color:rgba(184,150,90,0.04);line-height:1;pointer-events:none;user-select:none;}
-.hero-content{position:relative;z-index:2;max-width:700px;}
-.hero-eyebrow{font-family:'Josefin Sans',sans-serif;font-size:0.58rem;font-weight:200;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:1.5rem;margin-bottom:2rem;}
-.hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--gold);}
-.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,6vw,6rem);font-weight:400;line-height:1.05;margin-bottom:2rem;}
-.hero-h1 em{font-style:italic;color:var(--gold2);}
-.hero-sub{font-family:'Josefin Sans',sans-serif;font-size:0.65rem;font-weight:100;letter-spacing:0.3em;text-transform:uppercase;color:rgba(245,240,232,0.4);line-height:2;margin-bottom:3rem;}
-.hero-cta{display:inline-flex;align-items:center;gap:1.5rem;cursor:pointer;background:none;border:none;color:var(--cream);padding:0;font-family:'Josefin Sans',sans-serif;font-size:0.62rem;font-weight:200;letter-spacing:0.35em;text-transform:uppercase;transition:gap .4s;}
-.hero-cta:hover{gap:2.5rem;color:var(--gold);}
-.hero-cta-line{width:50px;height:1px;background:currentColor;transition:width .4s;}
-.hero-cta:hover .hero-cta-line{width:80px;}
-.hero-scroll{position:absolute;right:4rem;bottom:5rem;z-index:2;display:flex;flex-direction:column;align-items:center;gap:1rem;}
-.scroll-label{font-family:'Josefin Sans',sans-serif;font-size:0.5rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(245,240,232,0.3);writing-mode:vertical-rl;}
-.scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,rgba(184,150,90,0.5),transparent);}
-.divider{display:flex;align-items:center;gap:2rem;padding:0 4rem;}
-.divider-line{flex:1;height:1px;background:var(--rule);}
-.divider-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;}
-.about{padding:8rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:center;}
-.about-num{font-family:'Playfair Display',serif;font-style:italic;font-size:8rem;color:rgba(184,150,90,0.1);line-height:1;margin-bottom:-2rem;}
-.about-label{font-family:'Josefin Sans',sans-serif;font-size:0.58rem;font-weight:200;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;}
-.about-h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,3rem);font-weight:400;line-height:1.2;margin-bottom:2rem;}
-.about-h2 em{font-style:italic;color:var(--gold2);}
-.about-right p{font-size:1.05rem;line-height:1.9;color:rgba(245,240,232,0.65);margin-bottom:1.5rem;}
-.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem;border-top:1px solid var(--rule);padding-top:2rem;}
-.stat-num{font-family:'Playfair Display',serif;font-style:italic;font-size:2.2rem;color:var(--gold);}
-.stat-label{font-family:'Josefin Sans',sans-serif;font-size:0.58rem;font-weight:200;letter-spacing:0.3em;text-transform:uppercase;color:rgba(245,240,232,0.35);margin-top:0.3rem;}
-.gallery-section{padding:6rem 0;}
-.gallery-header{padding:0 4rem;margin-bottom:4rem;}
-.gallery-label{font-family:'Josefin Sans',sans-serif;font-size:0.58rem;font-weight:200;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-.gallery-h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,3rem);font-weight:400;}
-.gallery-h2 em{font-style:italic;color:var(--gold2);}
-.gallery-mosaic{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;padding:0 4rem;}
-.gitem{overflow:hidden;position:relative;cursor:pointer;background:var(--warm);}
-.gitem:nth-child(1){grid-column:1/6;grid-row:1/3;aspect-ratio:4/5;}
-.gitem:nth-child(2){grid-column:6/9;aspect-ratio:3/2;}
-.gitem:nth-child(3){grid-column:9/13;aspect-ratio:4/3;}
-.gitem:nth-child(4){grid-column:6/10;aspect-ratio:1/1;}
-.gitem:nth-child(5){grid-column:10/13;aspect-ratio:1/1;}
-.gitem-inner{width:100%;height:100%;transition:transform .7s cubic-bezier(.25,.46,.45,.94);}
-.gitem:hover .gitem-inner{transform:scale(1.04);}
-.ph{width:100%;height:100%;display:flex;align-items:flex-end;padding:1.5rem;}
-.gitem:nth-child(1) .ph{background:linear-gradient(170deg,#1e1a14 0%,#2a2218 60%,#1a1510 100%);}
-.gitem:nth-child(2) .ph{background:linear-gradient(150deg,#141820 0%,#1c2230 100%);}
-.gitem:nth-child(3) .ph{background:linear-gradient(150deg,#18141c 0%,#241c2e 100%);}
-.gitem:nth-child(4) .ph{background:linear-gradient(150deg,#141c18 0%,#1c2820 100%);}
-.gitem:nth-child(5) .ph{background:linear-gradient(150deg,#1c1814 0%,#28201c 100%);}
-.gitem-label{font-family:'Josefin Sans',sans-serif;font-size:0.52rem;font-weight:200;letter-spacing:0.3em;text-transform:uppercase;color:rgba(245,240,232,0.2);}
-.gitem-hover{position:absolute;inset:0;background:rgba(13,12,11,0.6);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;opacity:0;transition:opacity .4s;}
-.gitem:hover .gitem-hover{opacity:1;}
-.gitem-hover-icon{width:44px;height:44px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:var(--gold);}
-.gitem-hover-text{font-family:'Josefin Sans',sans-serif;font-size:0.55rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);}
-.client-section{display:none;padding:8rem 4rem;}
-.client-section.open{display:block;}
-.client-header{margin-bottom:3rem;border-bottom:1px solid var(--rule);padding-bottom:2rem;}
-.client-greeting{font-family:'Josefin Sans',sans-serif;font-size:0.58rem;font-weight:200;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
-.client-name-display{font-family:'Playfair Display',serif;font-style:italic;font-size:2.5rem;}
-.client-instruction{font-family:'Josefin Sans',sans-serif;font-size:0.6rem;font-weight:200;letter-spacing:0.2em;color:rgba(245,240,232,0.35);margin-top:0.75rem;}
-.client-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;}
-.cphoto{aspect-ratio:3/4;position:relative;overflow:hidden;cursor:pointer;background:var(--warm);}
-.cphoto-inner{width:100%;height:100%;transition:transform .6s cubic-bezier(.25,.46,.45,.94);}
-.cphoto:hover .cphoto-inner{transform:scale(1.03);}
-.cph{width:100%;height:100%;}
-.cphoto:nth-child(1) .cph{background:linear-gradient(160deg,#1e1a14 0%,#2a2218 100%);}
-.cphoto:nth-child(2) .cph{background:linear-gradient(160deg,#141820 0%,#1e2530 100%);}
-.cphoto:nth-child(3) .cph{background:linear-gradient(160deg,#18141c 0%,#261e2e 100%);}
-.cphoto:nth-child(4) .cph{background:linear-gradient(160deg,#141c14 0%,#1e2a1e 100%);}
-.cphoto:nth-child(5) .cph{background:linear-gradient(160deg,#1c1814 0%,#2a2018 100%);}
-.cphoto:nth-child(6) .cph{background:linear-gradient(160deg,#14181c 0%,#1c2228 100%);}
-.cphoto:nth-child(7) .cph{background:linear-gradient(160deg,#1a141c 0%,#261a28 100%);}
-.cphoto:nth-child(8) .cph{background:linear-gradient(160deg,#141a18 0%,#1c2822 100%);}
-.cphoto-select{position:absolute;top:1rem;right:1rem;width:24px;height:24px;border:1px solid rgba(245,240,232,0.3);display:flex;align-items:center;justify-content:center;transition:all .3s;background:rgba(13,12,11,0.4);}
-.cphoto.sel .cphoto-select{background:var(--gold);border-color:var(--gold);}
-.check-mark{font-size:0.65rem;color:var(--ink);opacity:0;transition:opacity .2s;}
-.cphoto.sel .check-mark{opacity:1;}
-.cphoto-price{position:absolute;bottom:0.75rem;left:0.75rem;font-family:'Josefin Sans',sans-serif;font-size:0.55rem;font-weight:200;letter-spacing:0.2em;color:rgba(245,240,232,0.3);}
-.cart-bar{position:fixed;bottom:-100px;left:0;right:0;background:rgba(13,12,11,0.97);border-top:1px solid var(--gold);backdrop-filter:blur(20px);padding:1.5rem 4rem;display:flex;align-items:center;justify-content:space-between;z-index:200;transition:bottom .5s cubic-bezier(.25,.46,.45,.94);}
-.cart-bar.up{bottom:0;}
-.cart-count{font-family:'Playfair Display',serif;font-style:italic;font-size:1.4rem;color:var(--gold);}
-.cart-sub{font-family:'Josefin Sans',sans-serif;font-size:0.55rem;font-weight:200;letter-spacing:0.3em;text-transform:uppercase;color:rgba(245,240,232,0.35);margin-top:0.2rem;}
-.cart-buy{font-family:'Josefin Sans',sans-serif;font-size:0.62rem;font-weight:200;letter-spacing:0.4em;text-transform:uppercase;background:var(--gold);color:var(--ink);border:none;padding:1rem 2.5rem;cursor:pointer;transition:opacity .3s;}
-.cart-buy:hover{opacity:0.85;}
-.modal-overlay{display:none;position:fixed;inset:0;z-index:1000;background:rgba(13,12,11,0.92);backdrop-filter:blur(16px);align-items:center;justify-content:center;}
-.modal-overlay.open{display:flex;}
-.modal-box{background:var(--warm);border:1px solid var(--rule);padding:4rem;min-width:400px;position:relative;animation:modalIn .4s cubic-bezier(.25,.46,.45,.94);}
-@keyframes modalIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-.modal-deco{position:absolute;top:-1px;left:50%;transform:translateX(-50%);width:60px;height:1px;background:var(--gold);}
-.modal-close{position:absolute;top:1.5rem;right:1.5rem;font-family:'Josefin Sans',sans-serif;font-size:0.55rem;font-weight:200;letter-spacing:0.3em;text-transform:uppercase;color:rgba(245,240,232,0.3);cursor:pointer;border:none;background:none;transition:color .3s;}
-.modal-close:hover{color:var(--cream);}
-.modal-label{font-family:'Josefin Sans',sans-serif;font-size:0.55rem;font-weight:200;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-.modal-h{font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;margin-bottom:0.5rem;}
-.modal-p{font-family:'Josefin Sans',sans-serif;font-size:0.62rem;font-weight:200;letter-spacing:0.15em;color:rgba(245,240,232,0.4);margin-bottom:2.5rem;line-height:1.8;}
-.pin-row{display:flex;gap:0.75rem;justify-content:center;margin-bottom:2rem;}
-.pin-d{width:56px;height:68px;background:transparent;border:none;border-bottom:1px solid rgba(245,240,232,0.2);color:var(--cream);font-family:'Playfair Display',serif;font-style:italic;font-size:2rem;text-align:center;outline:none;transition:border-color .3s;}
-.pin-d:focus{border-color:var(--gold);}
-.pin-btn{width:100%;padding:1rem;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Josefin Sans',sans-serif;font-size:0.62rem;font-weight:200;letter-spacing:0.4em;text-transform:uppercase;cursor:pointer;transition:all .4s;margin-bottom:1rem;}
-.pin-btn:hover{background:var(--gold);color:var(--ink);}
-.pin-err{font-family:'Josefin Sans',sans-serif;font-size:0.58rem;letter-spacing:0.2em;color:#c0674a;text-align:center;min-height:1.2rem;margin-bottom:0.75rem;display:none;}
-.modal-note{font-family:'Josefin Sans',sans-serif;font-size:0.52rem;font-weight:200;letter-spacing:0.2em;color:rgba(245,240,232,0.2);text-align:center;}
-footer{border-top:1px solid var(--rule);padding:3rem 4rem;display:flex;justify-content:space-between;align-items:center;margin-top:4rem;}
-.foot-logo{font-family:'Playfair Display',serif;font-size:0.95rem;letter-spacing:0.25em;text-transform:uppercase;}
-.foot-logo em{font-style:italic;color:var(--gold);}
-.foot-copy{font-family:'Josefin Sans',sans-serif;font-size:0.52rem;font-weight:200;letter-spacing:0.25em;text-transform:uppercase;color:rgba(245,240,232,0.25);}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+#loader{position:fixed;inset:0;background:#fff;z-index:9000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;transition:opacity .6s,visibility .6s;}
+#loader.hide{opacity:0;visibility:hidden;}
+.loader-logo{font-size:1.1rem;font-weight:700;letter-spacing:-.02em;color:var(--text);display:flex;align-items:center;gap:.4rem;}
+.loader-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;}
+.loader-bar{width:160px;height:2px;background:var(--bg2);border-radius:1px;overflow:hidden;}
+.loader-fill{height:100%;width:0;background:var(--black);transition:width 1.4s cubic-bezier(.4,0,.2,1);}
+nav{position:fixed;top:0;left:0;right:0;z-index:600;height:52px;display:flex;align-items:center;padding:0 2.5rem;justify-content:space-between;background:rgba(255,255,255,0.88);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,0.07);}
+.nav-logo{font-size:.95rem;font-weight:600;letter-spacing:-.02em;color:var(--text);display:flex;align-items:center;gap:.5rem;}
+.nav-logo-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;display:inline-block;}
+.nav-links{display:flex;gap:2rem;align-items:center;}
+.nav-a{font-size:.8rem;font-weight:400;color:var(--text2);text-decoration:none;cursor:pointer;background:none;border:none;transition:color .2s;font-family:'Inter',sans-serif;}
+.nav-a:hover{color:var(--text);}
+.nav-cta{font-size:.78rem;font-weight:500;background:var(--black);color:#fff;border:none;padding:.42rem 1.1rem;border-radius:980px;cursor:pointer;transition:background .2s;font-family:'Inter',sans-serif;}
+.nav-cta:hover{background:#333;}
+.hero{padding-top:52px;height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;background:var(--black);}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:0 5rem 0 4rem;position:relative;z-index:2;}
+.hero-eyebrow{font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:1.5rem;display:flex;align-items:center;gap:.8rem;}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold);}
+.hero-h1{font-size:clamp(2.8rem,4.5vw,5rem);font-weight:700;line-height:1.05;letter-spacing:-.04em;color:#fff;margin-bottom:1.2rem;}
+.hero-h1 span{color:var(--gold);}
+.hero-sub{font-size:.95rem;font-weight:300;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:2.5rem;max-width:420px;}
+.hero-btns{display:flex;gap:.75rem;flex-wrap:wrap;}
+.btn-solid{font-size:.82rem;font-weight:500;background:#fff;color:#000;border:none;padding:.7rem 1.5rem;border-radius:980px;cursor:pointer;transition:opacity .2s;font-family:'Inter',sans-serif;}
+.btn-solid:hover{opacity:.85;}
+.btn-ghost{font-size:.82rem;font-weight:400;background:transparent;color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.25);padding:.7rem 1.5rem;border-radius:980px;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;}
+.btn-ghost:hover{background:rgba(255,255,255,.08);}
+.hero-right{position:relative;overflow:hidden;}
+.hero-photo-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;height:100%;gap:2px;}
+.hero-cell{overflow:hidden;}
+.hero-cell:first-child{grid-row:span 2;}
+.hero-ph{width:100%;height:100%;background-size:cover;background-position:center top;transition:transform 10s ease;filter:brightness(.75);}
+.hero-cell:hover .hero-ph{transform:scale(1.04);}
+.hph1{background-color:#1c1a17;}
+.hph2{background-color:#14181f;}
+.hph3{background-color:#161218;}
+.hero-scroll{position:absolute;bottom:2.5rem;left:4rem;z-index:3;display:flex;align-items:center;gap:.75rem;}
+.hero-scroll-line{width:1px;height:44px;background:linear-gradient(to bottom,rgba(255,255,255,.5),transparent);animation:scrollpulse 2.2s ease-in-out infinite;}
+@keyframes scrollpulse{0%,100%{opacity:.3}50%{opacity:.9}}
+.hero-scroll-txt{font-size:.55rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);writing-mode:vertical-rl;}
+.marquee{padding:1.2rem 0;overflow:hidden;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.mq-track{display:flex;gap:2.5rem;white-space:nowrap;animation:mqscroll 22s linear infinite;}
+.mq-track:hover{animation-play-state:paused;}
+@keyframes mqscroll{to{transform:translateX(-50%);}}
+.mq-item{font-size:.7rem;font-weight:500;color:var(--text3);letter-spacing:.08em;text-transform:uppercase;flex-shrink:0;display:flex;align-items:center;gap:2.5rem;}
+.mq-sep{width:3px;height:3px;background:var(--gold);border-radius:50%;opacity:.6;}
+.section{padding:7rem 0;}
+.container{max-width:1100px;margin:0 auto;padding:0 2.5rem;}
+.section-eyebrow{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;}
+.section-h{font-size:clamp(2rem,3.2vw,3rem);font-weight:700;letter-spacing:-.04em;line-height:1.1;color:var(--text);margin-bottom:1.2rem;}
+.section-sub{font-size:.95rem;color:var(--text2);line-height:1.75;max-width:480px;}
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
+.about-img-wrap{position:relative;aspect-ratio:3/4;border-radius:var(--radius);overflow:hidden;background:var(--bg2);}
+.about-slide{position:absolute;inset:0;background-size:cover;background-position:center top;transition:opacity .9s ease;border-radius:var(--radius);}
+.about-dots{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:5;}
+.about-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.4);border:none;cursor:pointer;transition:all .3s;padding:0;}
+.about-dot.active{background:#fff;transform:scale(1.4);}
+.about-name{font-size:2rem;font-weight:700;letter-spacing:-.04em;line-height:1.1;margin:1rem 0 .4rem;}
+.about-title{font-size:.82rem;font-weight:500;color:var(--gold);letter-spacing:.05em;text-transform:uppercase;margin-bottom:1.5rem;}
+.about-bio{font-size:.9rem;color:var(--text2);line-height:1.8;margin-bottom:1rem;}
+.about-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border);}
+.stat-n{font-size:1.6rem;font-weight:700;letter-spacing:-.04em;color:var(--text);}
+.stat-l{font-size:.65rem;font-weight:500;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.services-bg{background:var(--bg2);}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:var(--radius);overflow:hidden;margin-top:3.5rem;}
+.svc{background:var(--bg);padding:2.5rem 2rem;transition:background .25s;}
+.svc:hover{background:#fafafa;}
+.svc-icon{width:40px;height:40px;background:var(--bg2);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;font-size:1.1rem;}
+.svc-num{font-size:.62rem;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.75rem;}
+.svc-title{font-size:1.05rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.65rem;}
+.svc-desc{font-size:.82rem;color:var(--text2);line-height:1.7;}
+.work-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;}
+.work-bento{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:320px 240px;gap:4px;border-radius:var(--radius);overflow:hidden;}
+.w-item{position:relative;overflow:hidden;cursor:pointer;background:var(--bg2);}
+.w-item:nth-child(1){grid-column:1/5;grid-row:1/3;}
+.w-item:nth-child(2){grid-column:5/8;grid-row:1;}
+.w-item:nth-child(3){grid-column:8/13;grid-row:1;}
+.w-item:nth-child(4){grid-column:5/9;grid-row:2;}
+.w-item:nth-child(5){grid-column:9/13;grid-row:2;}
+.w-img{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .8s cubic-bezier(.25,.46,.45,.94);}
+.w-item:hover .w-img{transform:scale(1.05);}
+.w-cap{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55) 0%,transparent 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.4rem;opacity:0;transition:opacity .3s;}
+.w-item:hover .w-cap{opacity:1;}
+.w-cat{font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:.25rem;}
+.w-lock{font-size:.75rem;color:#fff;display:flex;align-items:center;gap:.35rem;}
+.team-bg{background:var(--bg2);}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3.5rem;}
+.team-card{background:var(--bg);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);transition:transform .3s,box-shadow .3s;}
+.team-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08);}
+.team-photo{aspect-ratio:3/4;background:var(--bg2);position:relative;overflow:hidden;}
+.team-ph{width:100%;height:100%;background-size:cover;background-position:center top;}
+.tph1{background:linear-gradient(155deg,#e8e0d8 0%,#d0c8bc 100%);}
+.tph2{background:linear-gradient(155deg,#d8e0e8 0%,#bcc8d0 100%);}
+.tph3{background:linear-gradient(155deg,#e0d8e8 0%,#c8bcd0 100%);}
+.tph4{background:linear-gradient(155deg,#d8e8e0 0%,#bcd0c8 100%);}
+.team-info{padding:1.2rem 1.25rem;}
+.team-name{font-size:.92rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.2rem;}
+.team-role{font-size:.72rem;font-weight:500;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;}
+.portal{display:none;padding:7rem 0;}
+.portal.open{display:block;}
+.portal-head{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:2rem;border-bottom:1px solid var(--border);margin-bottom:3rem;}
+.portal-label{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;}
+.portal-client-name{font-size:2.2rem;font-weight:700;letter-spacing:-.04em;}
+.portal-info{font-size:.82rem;color:var(--text2);margin-top:.4rem;}
+.portal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;border-radius:var(--radius);overflow:hidden;}
+.pp{aspect-ratio:3/4;position:relative;overflow:hidden;cursor:pointer;background:var(--bg2);}
+.pp-img{width:100%;height:100%;background-size:cover;background-position:center top;transition:transform .6s cubic-bezier(.25,.46,.45,.94);}
+.pp:hover .pp-img{transform:scale(1.04);}
+.pp-sel{position:absolute;top:.75rem;right:.75rem;width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.9);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.pp.sel .pp-sel{background:var(--black);border-color:var(--black);}
+.pp-chk{font-size:.65rem;color:#fff;opacity:0;transition:opacity .15s;font-weight:700;}
+.pp.sel .pp-chk{opacity:1;}
+.pp-price{position:absolute;bottom:.65rem;left:.75rem;font-size:.65rem;font-weight:500;color:rgba(0,0,0,.5);background:rgba(255,255,255,.85);padding:.2rem .5rem;border-radius:980px;}
+.cart{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--border);padding:1.1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;z-index:400;transform:translateY(100%);transition:transform .45s cubic-bezier(.16,1,.3,1);}
+.cart.up{transform:translateY(0);}
+.cart-count{font-size:.95rem;font-weight:600;letter-spacing:-.02em;color:var(--text);}
+.cart-total{font-size:.75rem;color:var(--text2);margin-top:.1rem;}
+.cart-buy{font-size:.82rem;font-weight:500;background:var(--black);color:#fff;border:none;padding:.7rem 1.8rem;border-radius:980px;cursor:pointer;transition:background .2s;font-family:'Inter',sans-serif;}
+.cart-buy:hover{background:#222;}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 0;}
+.footer-inner{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;align-items:start;}
+.footer-logo{font-size:.95rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem;}
+.footer-tagline{font-size:.78rem;color:var(--text2);line-height:1.6;max-width:220px;}
+.footer-col-title{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin-bottom:1rem;}
+.footer-links{display:flex;flex-direction:column;gap:.6rem;}
+.footer-link{font-size:.8rem;color:var(--text2);text-decoration:none;transition:color .2s;cursor:pointer;background:none;border:none;font-family:'Inter',sans-serif;text-align:left;}
+.footer-link:hover{color:var(--text);}
+.footer-bottom{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:.72rem;color:var(--text3);}
+.modal-bg{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);align-items:center;justify-content:center;}
+.modal-bg.open{display:flex;}
+.modal{background:#fff;border-radius:20px;padding:3rem 2.5rem;width:400px;position:relative;animation:modalup .35s cubic-bezier(.16,1,.3,1);box-shadow:0 24px 80px rgba(0,0,0,.15);}
+@keyframes modalup{from{opacity:0;transform:scale(.95) translateY(12px);}to{opacity:1;transform:none;}}
+.modal-close{position:absolute;top:1.2rem;right:1.2rem;width:28px;height:28px;background:var(--bg2);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--text2);transition:background .2s;}
+.modal-close:hover{background:var(--border);}
+.modal-eyebrow{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;}
+.modal-h{font-size:1.6rem;font-weight:700;letter-spacing:-.03em;margin-bottom:.4rem;}
+.modal-p{font-size:.82rem;color:var(--text2);line-height:1.65;margin-bottom:2rem;}
+.pin-fields{display:flex;gap:.65rem;justify-content:center;margin-bottom:1.5rem;}
+.pin-f{width:58px;height:58px;border:2px solid var(--border);border-radius:12px;font-size:1.5rem;font-weight:600;text-align:center;outline:none;color:var(--text);background:var(--bg2);transition:border-color .2s,background .2s;font-family:'Inter',sans-serif;}
+.pin-f:focus{border-color:var(--black);background:#fff;}
+.pin-err{font-size:.78rem;color:#e53935;text-align:center;margin-bottom:.75rem;display:none;min-height:1.2rem;}
+.modal-submit{width:100%;padding:.82rem;background:var(--black);color:#fff;border:none;border-radius:980px;font-size:.85rem;font-weight:500;cursor:pointer;transition:background .2s;font-family:'Inter',sans-serif;margin-bottom:.75rem;}
+.modal-submit:hover{background:#222;}
+.modal-note{font-size:.72rem;color:var(--text3);text-align:center;}
+.fade-up{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);}
+.fade-up.d1{transition-delay:.08s;}.fade-up.d2{transition-delay:.16s;}.fade-up.d3{transition-delay:.24s;}.fade-up.d4{transition-delay:.32s;}
+.fade-left{opacity:0;transform:translateX(-32px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);}
+.in{opacity:1;transform:none;}
 </style>
 </head>
 <body>
-
-<div class="cursor" id="cur"></div>
-<div class="cursor-ring" id="cur-ring"></div>
-
-<nav>
-  <div class="nav-logo">M. <span>Çalban</span></div>
-  <div class="nav-right">
-    <button class="nav-link" onclick="scrollTo({top:document.querySelector('.about').offsetTop,behavior:'smooth'})">About</button>
-    <button class="nav-link" onclick="scrollTo({top:document.querySelector('.gallery-section').offsetTop,behavior:'smooth'})">Work</button>
-    <button class="nav-link">Contact</button>
-    <button class="nav-access" onclick="openModal()">Client Access</button>
-  </div>
-</nav>
-
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-letter">M</div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">Photography &amp; Visual Art</div>
-    <h1 class="hero-h1">Capturing<br><em>timeless</em><br>moments</h1>
-    <p class="hero-sub">Fine art photography · United States<br>Available worldwide for commissions</p>
-    <button class="hero-cta" onclick="openModal()">
-      <span class="hero-cta-line"></span>
-      View your gallery
-    </button>
-  </div>
-  <div class="hero-scroll">
-    <div class="scroll-label">Scroll</div>
-    <div class="scroll-line"></div>
-  </div>
-</section>
-
-<div class="divider"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
-
-<section class="about">
-  <div class="about-left">
-    <div class="about-num">01</div>
-    <div class="about-label">The Artist</div>
-    <h2 class="about-h2">A vision<br>beyond the <em>lens</em></h2>
-  </div>
-  <div class="about-right">
-    <p>Mustafa Çalban is a fine art photographer whose work explores the delicate interplay between light, shadow, and human emotion. Each frame is a deliberate composition — never accidental, always intentional.</p>
-    <p>With an eye for the extraordinary in the ordinary, Mustafa crafts images that endure long after the moment has passed.</p>
-    <div class="about-stats">
-      <div><div class="stat-num">200+</div><div class="stat-label">Sessions completed</div></div>
-      <div><div class="stat-num">8+</div><div class="stat-label">Years of experience</div></div>
-      <div><div class="stat-num">12</div><div class="stat-label">States covered</div></div>
-      <div><div class="stat-num">&#8734;</div><div class="stat-label">Stories told</div></div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
-
-<section class="gallery-section">
-  <div class="gallery-header">
-    <div class="gallery-label">02 — Selected Work</div>
-    <h2 class="gallery-h2">Recent <em>collections</em></h2>
-  </div>
-  <div class="gallery-mosaic">
-    <div class="gitem" onclick="openModal()">
-      <div class="gitem-inner"><div class="ph"><span class="gitem-label">Portrait</span></div></div>
-      <div class="gitem-hover"><div class="gitem-hover-icon">&#128274;</div><div class="gitem-hover-text">Client Access</div></div>
-    </div>
-    <div class="gitem" onclick="openModal()">
-      <div class="gitem-inner"><div class="ph"><span class="gitem-label">Landscape</span></div></div>
-      <div class="gitem-hover"><div class="gitem-hover-icon">&#128274;</div><div class="gitem-hover-text">Client Access</div></div>
-    </div>
-    <div class="gitem" onclick="openModal()">
-      <div class="gitem-inner"><div class="ph"><span class="gitem-label">Editorial</span></div></div>
-      <div class="gitem-hover"><div class="gitem-hover-icon">&#128274;</div><div class="gitem-hover-text">Client Access</div></div>
-    </div>
-    <div class="gitem" onclick="openModal()">
-      <div class="gitem-inner"><div class="ph"><span class="gitem-label">Wedding</span></div></div>
-      <div class="gitem-hover"><div class="gitem-hover-icon">&#128274;</div><div class="gitem-hover-text">Client Access</div></div>
-    </div>
-    <div class="gitem" onclick="openModal()">
-      <div class="gitem-inner"><div class="ph"><span class="gitem-label">Fine Art</span></div></div>
-      <div class="gitem-hover"><div class="gitem-hover-icon">&#128274;</div><div class="gitem-hover-text">Client Access</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="client-section" id="client-section">
-  <div class="divider" style="margin:0 0 4rem;padding:0;"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
-  <div class="client-header">
-    <div class="client-greeting">03 — Private Gallery</div>
-    <div class="client-name-display" id="client-name-display">Welcome</div>
-    <div class="client-instruction">Select the photographs you wish to purchase · Click to select · Proceed to checkout below</div>
-  </div>
-  <div class="client-grid" id="client-grid">
-    <div class="cphoto" onclick="toggleSel(this)"><div class="cphoto-inner"><div class="cph"></div></div><div class="cphoto-select"><span class="check-mark">&#10003;</span></div><div class="cphoto-price">$25 / print</div></div>
-    <div class="cphoto" onclick="toggleSel(this)"><div class="cphoto-inner"><div class="cph"></div></div><div class="cphoto-select"><span class="check-mark">&#10003;</span></div><div class="cphoto-price">$25 / print</div></div>
-    <div class="cphoto" onclick="toggleSel(this)"><div class="cphoto-inner"><div class="cph"></div></div><div class="cphoto-select"><span class="check-mark">&#10003;</span></div><div class="cphoto-price">$25 / print</div></div>
-    <div class="cphoto" onclick="toggleSel(this)"><div class="cphoto-inner"><div class="cph"></div></div><div class="cphoto-select"><span class="check-mark">&#10003;</span></div><div class="cphoto-price">$25 / print</div></div>
-    <div class="cphoto" onclick="toggleSel(this)"><div class="cphoto-inner"><div class="cph"></div></div><div class="cphoto-select"><span class="check-mark">&#10003;</span></div><div class="cphoto-price">$25 / print</div></div>
-    <div class="cphoto" onclick="toggleSel(this)"><div class="cphoto-inner"><div class="cph"></div></div><div class="cphoto-select"><span class="check-mark">&#10003;</span></div><div class="cphoto-price">$25 / print</div></div>
-    <div class="cphoto" onclick="toggleSel(this)"><div class="cphoto-inner"><div class="cph"></div></div><div class="cphoto-select"><span class="check-mark">&#10003;</span></div><div class="cphoto-price">$25 / print</div></div>
-    <div class="cphoto" onclick="toggleSel(this)"><div class="cphoto-inner"><div class="cph"></div></div><div class="cphoto-select"><span class="check-mark">&#10003;</span></div><div class="cphoto-price">$25 / print</div></div>
-  </div>
-</section>
-
-<div class="cart-bar" id="cart-bar">
-  <div>
-    <div class="cart-count" id="cart-count">0 photographs selected</div>
-    <div class="cart-sub" id="cart-price">Total: $0.00</div>
-  </div>
-  <button class="cart-buy" onclick="checkout()">Purchase via Stripe &#8594;</button>
-</div>
-
-<footer>
-  <div class="foot-logo">Mustafa <em>Çalban</em></div>
-  <div class="foot-copy">&#169; 2025 · All rights reserved · United States</div>
-</footer>
-
-<div class="modal-overlay" id="modal-overlay" onclick="overlayClick(event)">
-  <div class="modal-box">
-    <div class="modal-deco"></div>
-    <button class="modal-close" onclick="closeModal()">Close &#10005;</button>
-    <div class="modal-label">Private Access</div>
-    <h2 class="modal-h">Your gallery<br>awaits</h2>
-    <p class="modal-p">Enter the 4-digit PIN provided<br>by Mustafa to access your private collection.</p>
-    <div class="pin-row">
-      <input class="pin-d" type="password" maxlength="1" id="d1" inputmode="numeric" oninput="pn(this,'d2')">
-      <input class="pin-d" type="password" maxlength="1" id="d2" inputmode="numeric" oninput="pn(this,'d3')">
-      <input class="pin-d" type="password" maxlength="1" id="d3" inputmode="numeric" oninput="pn(this,'d4')">
-      <input class="pin-d" type="password" maxlength="1" id="d4" inputmode="numeric" oninput="pn(this,null)">
-    </div>
-    <div class="pin-err" id="pin-err">Incorrect PIN — please try again</div>
-    <button class="pin-btn" onclick="checkPin()">Enter Gallery</button>
-    <div class="modal-note">Don't have a PIN? Reach out to Mustafa directly.</div>
-  </div>
-</div>
-
+<div id="loader"><div class="loader-logo"><div class="loader-dot"></div>Model & Store</div><div class="loader-bar"><div class="loader-fill" id="lfill"></div></div></div>
+<nav id="nav"><div class="nav-logo"><div class="nav-logo-dot"></div>Model &amp; Store</div><div class="nav-links"><a class="nav-a" href="#about">About</a><a class="nav-a" href="#services">Services</a><a class="nav-a" href="#work">Work</a><a class="nav-a" href="#team">Team</a><a class="nav-a" href="#contact">Contact</a><button class="nav-cta" onclick="openModal()">Client Access</button></div></nav>
+<section class="hero"><div class="hero-left"><div class="hero-eyebrow">Creative Agency &middot; Los Angeles &amp; Istanbul</div><h1 class="hero-h1">Shape your<br><span>presence.</span><br>Own your story.</h1><p class="hero-sub">We craft visual identities and manage digital presence for professionals who refuse to blend in &mdash; from lawyers to chefs, models to doctors.</p><div class="hero-btns"><button class="btn-solid" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Our Services</button><button class="btn-ghost" onclick="openModal()">Client Gallery</button></div></div><div class="hero-right"><div class="hero-photo-grid"><div class="hero-cell"><div class="hero-ph hph1" id="hp1"></div></div><div class="hero-cell"><div class="hero-ph hph2" id="hp2"></div></div><div class="hero-cell"><div class="hero-ph hph3" id="hp3"></div></div></div></div><div class="hero-scroll"><div class="hero-scroll-line"></div><div class="hero-scroll-txt">Scroll</div></div></section>
+<div class="marquee"><div class="mq-track" id="mqtrack"></div></div>
+<section class="section" id="about"><div class="container"><div class="about-wrap"><div class="about-img-wrap fade-left"><div class="about-slide" id="about-slide"></div><div class="about-dots" id="about-dots"></div></div><div class="about-text"><div class="section-eyebrow fade-up">The Founder</div><h2 class="section-h fade-up d1">Mustafa Calban</h2><div class="about-title fade-up d2">Founder &amp; Creative Director, Model &amp; Store</div><p class="about-bio fade-up d2">Mustafa Calban is a Los Angeles-based entrepreneur and creative director with a rare eye for transforming personal brands into lasting cultural statements. Born from a vision to bridge global aesthetics with local sensibility, he founded Model &amp; Store to deliver something the industry rarely offers: craft with intention.</p><p class="about-bio fade-up d3">With a background spanning high-end photography, videography, and strategic social media management, Mustafa has built digital presences for professionals across every field &mdash; lawyers, physicians, restaurateurs, athletes, models, and beyond.</p><p class="about-bio fade-up d3" style="font-style:italic;color:var(--text3);font-size:.82rem;">Operating between Los Angeles and Istanbul &mdash; available worldwide.</p><div class="about-stats fade-up d4"><div><div class="stat-n">200+</div><div class="stat-l">Clients</div></div><div><div class="stat-n">8+</div><div class="stat-l">Years</div></div><div><div class="stat-n">2</div><div class="stat-l">Cities</div></div><div><div class="stat-n">&infin;</div><div class="stat-l">Stories</div></div></div></div></div></div></section>
+<section class="section services-bg" id="services"><div class="container"><div class="section-eyebrow fade-up">What We Do</div><h2 class="section-h fade-up d1">Every brand.<br>Every story.</h2><p class="section-sub fade-up d2">From the lens to the feed &mdash; we handle every touchpoint of your digital identity.</p><div class="services-grid"><div class="svc fade-up d1"><div class="svc-icon">&#128247;</div><div class="svc-num">01</div><div class="svc-title">Photo Production</div><p class="svc-desc">High-end photography sessions tailored to your brand &mdash; editorial, lifestyle, corporate, and event.</p></div><div class="svc fade-up d2"><div class="svc-icon">&#127916;</div><div class="svc-num">02</div><div class="svc-title">Video Production</div><p class="svc-desc">Cinematic video content for social media, campaigns, and brand films. From concept to final cut.</p></div><div class="svc fade-up d3"><div class="svc-icon">&#128241;</div><div class="svc-num">03</div><div class="svc-title">Social Media Management</div><p class="svc-desc">Full-service social media strategy, content creation, and community management.</p></div><div class="svc fade-up d1"><div class="svc-icon">&#10024;</div><div class="svc-num">04</div><div class="svc-title">Image Consulting</div><p class="svc-desc">We shape how the world sees you &mdash; wardrobe direction, art direction, personal branding strategy.</p></div><div class="svc fade-up d2"><div class="svc-icon">&#127912;</div><div class="svc-num">05</div><div class="svc-title">Brand Identity</div><p class="svc-desc">From visual identity to brand voice &mdash; cohesive, recognizable brands that command attention.</p></div><div class="svc fade-up d3"><div class="svc-icon">&#128444;</div><div class="svc-num">06</div><div class="svc-title">Fine Art Prints</div><p class="svc-desc">Museum-quality fine art prints available through your private gallery. Limited editions, signed.</p></div></div></div></section>
+<section class="section" id="work"><div class="container"><div class="work-header"><div><div class="section-eyebrow fade-up">Selected Work</div><h2 class="section-h fade-up d1">Recent Projects</h2></div><p class="section-sub fade-up d2" style="text-align:right;max-width:300px;">Each gallery is private &mdash; accessible only to those invited.</p></div><div class="work-bento"><div class="w-item fade-up d1" onclick="openModal()"><div class="w-img" id="wimg1" style="background-color:#e8e3dc;"></div><div class="w-cap"><div class="w-cat">Portrait</div><div class="w-lock">&#128274; Client Access Only</div></div></div><div class="w-item fade-up d2" onclick="openModal()"><div class="w-img" id="wimg2" style="background-color:#dce3e8;"></div><div class="w-cap"><div class="w-cat">Editorial</div><div class="w-lock">&#128274; Client Access Only</div></div></div><div class="w-item fade-up d3" onclick="openModal()"><div class="w-img" id="wimg3" style="background-color:#e3dce8;"></div><div class="w-cap"><div class="w-cat">Lifestyle</div><div class="w-lock">&#128274; Client Access Only</div></div></div><div class="w-item fade-up d2" onclick="openModal()"><div class="w-img" id="wimg4" style="background-color:#dce8e0;"></div><div class="w-cap"><div class="w-cat">Brand</div><div class="w-lock">&#128274; Client Access Only</div></div></div><div class="w-item fade-up d3" onclick="openModal()"><div class="w-img" id="wimg5" style="background-color:#e8e0dc;"></div><div class="w-cap"><div class="w-cat">Fine Art</div><div class="w-lock">&#128274; Client Access Only</div></div></div></div></div></section>
+<section class="section team-bg" id="team"><div class="container"><div class="section-eyebrow fade-up">The Team</div><h2 class="section-h fade-up d1">The people<br>behind the lens.</h2><p class="section-sub fade-up d2">A collective of creatives dedicated to crafting presence that lasts.</p><div class="team-grid"><div class="team-card fade-up d1"><div class="team-photo"><div class="team-ph tph1" id="tph1"></div></div><div class="team-info"><div class="team-name">Mustafa Calban</div><div class="team-role">Founder &amp; Creative Director</div></div></div><div class="team-card fade-up d2"><div class="team-photo"><div class="team-ph tph2"></div></div><div class="team-info"><div class="team-name">Team Member</div><div class="team-role">Coming Soon</div></div></div><div class="team-card fade-up d3"><div class="team-photo"><div class="team-ph tph3"></div></div><div class="team-info"><div class="team-name">Team Member</div><div class="team-role">Coming Soon</div></div></div><div class="team-card fade-up d4"><div class="team-photo"><div class="team-ph tph4"></div></div><div class="team-info"><div class="team-name">Team Member</div><div class="team-role">Coming Soon</div></div></div></div></div></section>
+<section class="portal" id="portal"><div class="container"><div class="portal-head"><div><div class="portal-label">Private Gallery</div><div class="portal-client-name" id="portal-name">Welcome</div><div class="portal-info">Select the photos you wish to purchase &middot; Click to select &middot; Checkout below</div></div></div><div class="portal-grid" id="portal-grid"></div></div></section>
+<footer id="contact"><div class="container"><div class="footer-inner"><div><div class="footer-logo"><div class="nav-logo-dot"></div>Model &amp; Store</div><div class="footer-tagline">A creative agency shaping digital presence for professionals who demand excellence. Los Angeles &middot; Istanbul.</div></div><div><div class="footer-col-title">Services</div><div class="footer-links"><button class="footer-link">Photography</button><button class="footer-link">Videography</button><button class="footer-link">Social Media</button><button class="footer-link">Brand Identity</button></div></div><div><div class="footer-col-title">Company</div><div class="footer-links"><button class="footer-link" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</button><button class="footer-link" onclick="document.getElementById('team').scrollIntoView({behavior:'smooth'})">Team</button><button class="footer-link">Careers</button><button class="footer-link">Press</button></div></div><div><div class="footer-col-title">Connect</div><div class="footer-links"><a class="footer-link" href="#">Instagram</a><a class="footer-link" href="#">LinkedIn</a><a class="footer-link" href="mailto:info@midpointcreativemedia.com">Email</a><button class="footer-link" onclick="openModal()">Client Login</button></div></div></div><div class="footer-bottom"><div class="footer-copy">&copy; 2025 Model &amp; Store &middot; Midpoint Creative Media.</div><div class="footer-copy">Los Angeles, CA &middot; Istanbul, TR</div></div></div></footer>
+<div class="cart" id="cart"><div><div class="cart-count" id="cart-count">0 photos selected</div><div class="cart-total" id="cart-total">Total: $0.00</div></div><button class="cart-buy" onclick="checkout()">Purchase with Stripe &rarr;</button></div>
+<div class="modal-bg" id="modal-bg" onclick="bgclick(event)"><div class="modal"><button class="modal-close" onclick="closeModal()">&#10005;</button><div class="modal-eyebrow">Client Access</div><h2 class="modal-h">Your gallery awaits</h2><p class="modal-p">Enter the 4-digit PIN Mustafa provided to access your private collection.</p><div class="pin-fields"><input class="pin-f" type="password" maxlength="1" id="p1" inputmode="numeric" oninput="pnext(this,'p2')"><input class="pin-f" type="password" maxlength="1" id="p2" inputmode="numeric" oninput="pnext(this,'p3')"><input class="pin-f" type="password" maxlength="1" id="p3" inputmode="numeric" oninput="pnext(this,'p4')"><input class="pin-f" type="password" maxlength="1" id="p4" inputmode="numeric" oninput="pnext(this,null)"></div><div class="pin-err" id="pin-err">Incorrect PIN &mdash; please try again</div><button class="modal-submit" onclick="checkPin()">Access Gallery</button><div class="modal-note">No PIN? Contact Mustafa directly.</div></div></div>
 <script>
-const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
-document.addEventListener('mousemove',e=>{
-  cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
-  setTimeout(()=>{ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';},80);
-});
-
-// ============================================
-// PIN VERITABANI — buraya musteri ekle/cikar
-// ============================================
-const CLIENTS={
-  '1234':{name:'Sarah & James',price:25},
-  '5678':{name:'Emma Johnson',price:15},
-  '9999':{name:'Demo Client',price:20},
-};
-
+const API_KEY='AIzaSyC3O2znUU5SlWP4oqSbTPHRVQgSUBGZf6E';
+const FOLDER_ID='100mgAmrIXj1fVbZ7DYUjsDlHFwv5Pemg';
+const CLIENTS={'1234':{name:'Sarah & James',price:25,folderId:FOLDER_ID},'5678':{name:'Emma Johnson',price:15,folderId:FOLDER_ID},'9999':{name:'Demo Client',price:20,folderId:FOLDER_ID}};
+window.addEventListener('load',()=>{const f=document.getElementById('lfill');setTimeout(()=>f.style.width='100%',60);setTimeout(()=>{document.getElementById('loader').classList.add('hide');reveal();},1600);});
+window.addEventListener('scroll',reveal);
+function reveal(){document.querySelectorAll('.fade-up,.fade-left').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight-60)el.classList.add('in');});}
+setTimeout(reveal,1700);
+const mwords=['Photography','Videography','Social Media','Brand Identity','Image Consulting','Fine Art Prints','Los Angeles','Istanbul','Model & Store'];
+let mh='';for(let i=0;i<2;i++)mwords.forEach(w=>{mh+=`<div class="mq-item"><span class="mq-sep"></span>${w}</div>`;});
+document.getElementById('mqtrack').innerHTML=mh;
+async function getDrivePhotos(folderId){try{const url=`https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+mimeType+contains+'image/'&key=${API_KEY}&fields=files(id,name)&pageSize=50&orderBy=name`;const res=await fetch(url);const data=await res.json();if(data.files&&data.files.length>0)return data.files.map(f=>`https://drive.google.com/thumbnail?id=${f.id}&sz=w1200`);}catch(e){}return[];}
+let slideIdx=0,slidePhotos=[];
+async function initAboutSlider(){slidePhotos=await getDrivePhotos(FOLDER_ID);if(!slidePhotos.length)return;const dotsEl=document.getElementById('about-dots');slidePhotos.forEach((_,i)=>{const d=document.createElement('button');d.className='about-dot'+(i===0?' active':'');d.onclick=()=>goTo(i);dotsEl.appendChild(d);});goTo(0);setInterval(()=>goTo((slideIdx+1)%slidePhotos.length),2800);}
+function goTo(n){slideIdx=n;const s=document.getElementById('about-slide');s.style.opacity='0';setTimeout(()=>{s.style.backgroundImage=`url(${slidePhotos[n]})`;s.style.opacity='1';},400);document.querySelectorAll('.about-dot').forEach((d,i)=>d.classList.toggle('active',i===n));}
+async function initHero(){const p=await getDrivePhotos(FOLDER_ID);if(p[0])document.getElementById('hp1').style.backgroundImage=`url(${p[0]})`;if(p[1])document.getElementById('hp2').style.backgroundImage=`url(${p[1]})`;if(p[2])document.getElementById('hp3').style.backgroundImage=`url(${p[2]})`;}
+async function initWork(){const p=await getDrivePhotos(FOLDER_ID);for(let i=1;i<=5;i++){const el=document.getElementById('wimg'+i);if(el&&p[i+2])el.style.backgroundImage=`url(${p[i+2]})`;}}
+async function initTeam(){const p=await getDrivePhotos(FOLDER_ID);if(p[0]){const el=document.getElementById('tph1');if(el)el.style.backgroundImage=`url(${p[0]})`;}}
 let activeClient=null,selCount=0;
-
-function openModal(){document.getElementById('modal-overlay').classList.add('open');setTimeout(()=>document.getElementById('d1').focus(),100);}
-function closeModal(){document.getElementById('modal-overlay').classList.remove('open');resetPins();}
-function overlayClick(e){if(e.target===document.getElementById('modal-overlay'))closeModal();}
-function pn(el,nxt){if(el.value&&nxt)document.getElementById(nxt).focus();}
-function resetPins(){['d1','d2','d3','d4'].forEach(i=>document.getElementById(i).value='');document.getElementById('pin-err').style.display='none';}
-
-function checkPin(){
-  const pin=['d1','d2','d3','d4'].map(i=>document.getElementById(i).value).join('');
-  if(CLIENTS[pin]){
-    activeClient=CLIENTS[pin];
-    closeModal();
-    document.getElementById('client-name-display').textContent=activeClient.name;
-    document.querySelectorAll('.cphoto-price').forEach(el=>el.textContent='$'+activeClient.price+' / print');
-    document.getElementById('client-section').classList.add('open');
-    setTimeout(()=>document.getElementById('client-section').scrollIntoView({behavior:'smooth'}),200);
-  } else {
-    document.getElementById('pin-err').style.display='block';
-    resetPins();document.getElementById('d1').focus();
-  }
-}
-
-function toggleSel(el){
-  el.classList.toggle('sel');
-  selCount=document.querySelectorAll('.cphoto.sel').length;
-  const price=activeClient?selCount*activeClient.price:0;
-  document.getElementById('cart-count').textContent=selCount+' photograph'+(selCount!==1?'s':'')+' selected';
-  document.getElementById('cart-price').textContent='Total: $'+price.toFixed(2);
-  document.getElementById('cart-bar').classList.toggle('up',selCount>0);
-}
-
-function checkout(){
-  alert('Stripe checkout buraya gelecek!\n\n'+selCount+' foto — $'+(selCount*(activeClient?.price||20)).toFixed(2));
-}
-
-document.addEventListener('keydown',e=>{
-  if(e.key==='Enter'&&document.getElementById('modal-overlay').classList.contains('open'))checkPin();
-  if(e.key==='Escape')closeModal();
-});
+async function initPortal(folderId,price){const photos=await getDrivePhotos(folderId);const grid=document.getElementById('portal-grid');grid.innerHTML='';if(!photos.length){grid.innerHTML='<p style="color:var(--text2);font-size:.85rem;padding:2rem 0;">No photos found.</p>';return;}const colors=['#f0ece4','#e4ecf0','#ece4f0','#e4f0e8','#f0e8e4','#e4e8f0','#ece4ec','#e4f0ec'];photos.forEach((url,i)=>{const div=document.createElement('div');div.className='pp';div.innerHTML=`<div class="pp-img" style="background-image:url(${url});background-color:${colors[i%colors.length]}"></div><div class="pp-sel"><span class="pp-chk">&#10003;</span></div><div class="pp-price">$${price}</div>`;div.onclick=()=>toggleSel(div);grid.appendChild(div);});}
+function toggleSel(el){el.classList.toggle('sel');selCount=document.querySelectorAll('.pp.sel').length;const total=activeClient?selCount*activeClient.price:0;document.getElementById('cart-count').textContent=selCount+' photo'+(selCount!==1?'s':'')+' selected';document.getElementById('cart-total').textContent='Total: $'+total.toFixed(2);document.getElementById('cart').classList.toggle('up',selCount>0);}
+function checkout(){alert('Stripe Checkout\n\n'+selCount+' photo(s) &middot; $'+(selCount*(activeClient?.price||20)).toFixed(2)+'\n\nStripe integration coming next!');}
+function openModal(){document.getElementById('modal-bg').classList.add('open');setTimeout(()=>document.getElementById('p1').focus(),100);}
+function closeModal(){document.getElementById('modal-bg').classList.remove('open');resetPins();}
+function bgclick(e){if(e.target===document.getElementById('modal-bg'))closeModal();}
+function pnext(el,nid){if(el.value&&nid)document.getElementById(nid).focus();}
+function resetPins(){['p1','p2','p3','p4'].forEach(id=>document.getElementById(id).value='');document.getElementById('pin-err').style.display='none';}
+function checkPin(){const pin=['p1','p2','p3','p4'].map(id=>document.getElementById(id).value).join('');if(CLIENTS[pin]){activeClient=CLIENTS[pin];closeModal();document.getElementById('portal-name').textContent=activeClient.name;initPortal(activeClient.folderId,activeClient.price);const p=document.getElementById('portal');p.classList.add('open');setTimeout(()=>{p.scrollIntoView({behavior:'smooth'});reveal();},200);}else{document.getElementById('pin-err').style.display='block';resetPins();document.getElementById('p1').focus();}}
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&document.getElementById('modal-bg').classList.contains('open'))checkPin();if(e.key==='Escape')closeModal();});
+initAboutSlider();initHero();initWork();initTeam();
 </script>
 </body>
 </html>
