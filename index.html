@@ -320,7 +320,7 @@ if(!evEl) return;
 fetch("https://www.googleapis.com/drive/v3/files?q='1oEWLMiPyHM9owZxDgjnsxPH0AP1Cq6vS'+in+parents+and+mimeType+contains+'image/'&key=AIzaSyC3O2znUU5SlWP4oqSbTPHRVQgSUBGZf6E&fields=files(id)&pageSize=20")
 .then(function(r){return r.json();}).then(function(data){
   if(!data.files||!data.files.length||!evEl)return;
-  var photos=data.files.map(function(f){return'https://drive.google.com/thumbnail?id='+f.id+'&sz=w1200';});
+  var photos=data.files.map(function(f){return'https://lh3.googleusercontent.com/d/'+f.id+'=w1200';});
   var cur=0;
   function show(n){evEl.style.opacity='0';setTimeout(function(){evEl.style.backgroundImage='url('+photos[n]+')';evEl.style.opacity='1';},400);}
   show(0);
@@ -357,7 +357,7 @@ var FOLDER_ID = '1ulz7E2cf9nkxF33K67Dr6gjvrOEqeo-R';
 fetch("https://www.googleapis.com/drive/v3/files?q='"+FOLDER_ID+"'+in+parents+and+mimeType+contains+'image/'&key=AIzaSyC3O2znUU5SlWP4oqSbTPHRVQgSUBGZf6E&fields=files(id)&pageSize=20")
 .then(function(r){return r.json();}).then(function(data){
   if(!data.files||!reEl)return;
-  var photos=data.files.map(function(f){return'https://drive.google.com/thumbnail?id='+f.id+'&sz=w1200';});
+  var photos=data.files.map(function(f){return'https://lh3.googleusercontent.com/d/'+f.id+'=w1200';});
   var cur=0;
   function show(n){reEl.style.opacity='0';setTimeout(function(){reEl.style.backgroundImage='url('+photos[n]+')';reEl.style.opacity='1';},400);}
   show(0);
@@ -397,7 +397,7 @@ if(!smEl) return;
 fetch("https://www.googleapis.com/drive/v3/files?q='16MSEdtXkSUmfxigYBYBQjdM_-2SGzywd'+in+parents+and+mimeType+contains+'image/'&key=AIzaSyC3O2znUU5SlWP4oqSbTPHRVQgSUBGZf6E&fields=files(id)&pageSize=20")
 .then(r=>r.json()).then(function(data){
   if(!data.files||!smEl)return;
-  var photos=data.files.map(function(f){return'https://drive.google.com/thumbnail?id='+f.id+'&sz=w1200';});
+  var photos=data.files.map(function(f){return'https://lh3.googleusercontent.com/d/'+f.id+'=w1200';});
   var cur=0;
   function show(n){smEl.style.opacity='0';setTimeout(function(){smEl.style.backgroundImage='url('+photos[n]+')';smEl.style.opacity='1';},400);}
   show(0);
@@ -405,7 +405,7 @@ fetch("https://www.googleapis.com/drive/v3/files?q='16MSEdtXkSUmfxigYBYBQjdM_-2S
 });
 })();
 </script>
-<section class="section team-bg" id="team"><div class="container"><div class="section-eyebrow fade-up">The Team</div><h2 class="section-h fade-up d1">The people<br>behind the lens.</h2><p class="section-sub fade-up d2">A collective of creatives dedicated to crafting presence that lasts.</p><div class="team-grid"><div class="team-card fade-up d1"><div class="team-photo"><div class="team-ph tph1" style="background-image:url('https://drive.google.com/thumbnail?id=1UHqDyop4Y2Ema67yD_hp3O2nrYZk7K7O&sz=w800');background-size:cover;background-position:center top;"></div></div><div class="team-info"><div class="team-name">Mustafa Calban</div><div class="team-role">Founder &amp; Creative Director</div></div></div><div class="team-card fade-up d2"><div class="team-photo"><div class="team-ph tph2" style="background-image:url('https://drive.google.com/thumbnail?id=1KGlEleHg11oS8N4g-EBvhzRJtuyzCUhN&sz=w800');background-size:cover;background-position:center top;"></div></div><div class="team-info"><div class="team-name">Ozge Sekman</div><div class="team-role">Photographer &middot; Editor &middot; Director</div></div></div><div class="team-card fade-up d3"><div class="team-photo"><div class="team-ph tph3" style="background-image:url('https://drive.google.com/thumbnail?id=1Cl4kNfvWoaBPO8gWmVf8OUahpMOl9y-a&sz=w800');background-size:cover;background-position:center top;"></div></div><div class="team-info"><div class="team-name">Bekir Sekman</div><div class="team-role">Photographer &middot; Editor &middot; Director</div></div></div><div class="team-card fade-up d4"><div class="team-photo"><div class="team-ph tph4" style="background-image:url('https://drive.google.com/thumbnail?id=1iuQnq7ru7CYBWP1VTK3wvUZJTrDbhbJn&sz=w800');background-size:cover;background-position:center top;"></div></div><div class="team-info"><div class="team-name">Elif Yeter</div><div class="team-role">Lawyer &amp; Assistant</div></div></div><div class="team-card fade-up d5"><div class="team-photo"><div class="team-ph tph5" style="background-image:url('https://drive.google.com/thumbnail?id=1n3rTJjDRQ3NQjUHjs4TTwWd4jnkHOoNs&sz=w800');background-size:cover;background-position:center top;"></div></div><div class="team-info"><div class="team-name">Batuhan Ozkan</div><div class="team-role">Drone Photographer</div></div></div></div></div></section>
+<section class="section team-bg" id="team"><div class="container"><div class="section-eyebrow fade-up">The Team</div><h2 class="section-h fade-up d1">The people<br>behind the lens.</h2><p class="section-sub fade-up d2">A collective of creatives dedicated to crafting presence that lasts.</p><div class="team-grid"><div class="team-card fade-up d1"><div class="team-photo"><div class="team-ph tph1" style="background-image:url('https://lh3.googleusercontent.com/d/1UHqDyop4Y2Ema67yD_hp3O2nrYZk7K7O=w800');background-size:cover;background-position:center top;"></div></div><div class="team-info"><div class="team-name">Mustafa Calban</div><div class="team-role">Founder &amp; Creative Director</div></div></div><div class="team-card fade-up d2"><div class="team-photo"><div class="team-ph tph2" style="background-image:url('https://lh3.googleusercontent.com/d/1KGlEleHg11oS8N4g-EBvhzRJtuyzCUhN=w800');background-size:cover;background-position:center top;"></div></div><div class="team-info"><div class="team-name">Ozge Sekman</div><div class="team-role">Photographer &middot; Editor &middot; Director</div></div></div><div class="team-card fade-up d3"><div class="team-photo"><div class="team-ph tph3" style="background-image:url('https://lh3.googleusercontent.com/d/1Cl4kNfvWoaBPO8gWmVf8OUahpMOl9y-a=w800');background-size:cover;background-position:center top;"></div></div><div class="team-info"><div class="team-name">Bekir Sekman</div><div class="team-role">Photographer &middot; Editor &middot; Director</div></div></div><div class="team-card fade-up d4"><div class="team-photo"><div class="team-ph tph4" style="background-image:url('https://lh3.googleusercontent.com/d/1iuQnq7ru7CYBWP1VTK3wvUZJTrDbhbJn=w800');background-size:cover;background-position:center top;"></div></div><div class="team-info"><div class="team-name">Elif Yeter</div><div class="team-role">Lawyer &amp; Assistant</div></div></div><div class="team-card fade-up d5"><div class="team-photo"><div class="team-ph tph5" style="background-image:url('https://lh3.googleusercontent.com/d/1n3rTJjDRQ3NQjUHjs4TTwWd4jnkHOoNs=w800');background-size:cover;background-position:center top;"></div></div><div class="team-info"><div class="team-name">Batuhan Ozkan</div><div class="team-role">Drone Photographer</div></div></div></div></div></section>
 <section class="portal" id="portal"><div class="container"><div class="portal-head"><div><div class="portal-label">Private Gallery</div><div class="portal-client-name" id="portal-name">Welcome</div><div class="portal-info">Select photos to purchase &middot; Click to select &middot; Checkout below</div></div></div><div class="portal-grid" id="portal-grid"></div></div></section>
 <footer id="contact"><div class="container"><div class="footer-inner"><div><div class="footer-logo"><div class="nav-logo-dot"></div>Midpoint Creative</div><div class="footer-tagline">A creative agency shaping digital presence for professionals who demand excellence. Los Angeles &middot; Istanbul.</div></div><div><div class="footer-col-title">Services</div><div class="footer-links"><button class="footer-link">Photography</button><button class="footer-link">Videography</button><button class="footer-link">Social Media</button><button class="footer-link">Brand Identity</button></div></div><div><div class="footer-col-title">Company</div><div class="footer-links"><button class="footer-link" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</button><button class="footer-link" onclick="document.getElementById('team').scrollIntoView({behavior:'smooth'})">Team</button><button class="footer-link">Careers</button><button class="footer-link">Press</button></div></div><div><div class="footer-col-title">Connect</div><div class="footer-links"><a class="footer-link" href="https://www.instagram.com/midpointcreativemedia" target="_blank">Instagram</a><a class="footer-link" href="tel:+14244712242">+1 (424) 471-2242</a><a class="footer-link" href="mailto:info@midpointcreativemedia.com">info@midpointcreativemedia.com</a><button class="footer-link" onclick="openModal()">Client Login</button></div></div></div><div class="footer-bottom"><div class="footer-copy">&copy; 2026 Midpoint Creative Media. All rights reserved.</div><div class="footer-copy">Los Angeles, CA &middot; Istanbul, TR</div></div></div></footer>
 <div class="cart" id="cart"><div><div class="cart-count" id="cart-count">0 photos selected</div><div class="cart-total" id="cart-total">Total: $0.00</div></div><button class="cart-buy" onclick="checkout()">Purchase with Stripe &#8594;</button></div>
@@ -421,7 +421,7 @@ setTimeout(reveal,1700);
 const mw=['Photography','Videography','Social Media','Brand Identity','Image Consulting','Fine Art Prints','Los Angeles','Istanbul','Midpoint Creative'];
 let mh='';for(let i=0;i<2;i++)mw.forEach(w=>{mh+=`<div class="mq-item"><span class="mq-sep"></span>${w}</div>`;});
 document.getElementById('mqtrack').innerHTML=mh;
-async function getDrivePhotos(folderId){try{const r=await fetch(`https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+mimeType+contains+'image/'&key=${API_KEY}&fields=files(id,name)&pageSize=50&orderBy=name`);const d=await r.json();if(d.files&&d.files.length>0)return d.files.map(f=>`https://drive.google.com/thumbnail?id=${f.id}&sz=w1200`);}catch(e){}return[];}
+async function getDrivePhotos(folderId){try{const r=await fetch(`https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+mimeType+contains+'image/'&key=${API_KEY}&fields=files(id,name)&pageSize=50&orderBy=name`);const d=await r.json();if(d.files&&d.files.length>0)return d.files.map(f=>`https://lh3.googleusercontent.com/d/${f.id}=w1200`);}catch(e){}return[];}
 let sIdx=0,sPhotos=[];
 const sEl=document.getElementById('about-slide'),dEl=document.getElementById('about-dots');
 async function initSlider(){sPhotos=await getDrivePhotos(FOLDER_ID);if(!sPhotos.length)return;sPhotos.forEach((_,i)=>{const d=document.createElement('button');d.className='about-dot'+(i===0?' active':'');d.onclick=()=>goTo(i);dEl.appendChild(d);});goTo(0);setInterval(()=>goTo((sIdx+1)%sPhotos.length),2800);}
@@ -446,7 +446,7 @@ initSlider();
   const slide=document.getElementById('ag-slide');
   const dotsEl=document.getElementById('ag-dots');
   if(!data.files||!slide||!data.files.length)return;
-  const photos=data.files.map(function(f){return 'https://drive.google.com/thumbnail?id='+f.id+'&sz=w1200';});
+  const photos=data.files.map(function(f){return 'https://lh3.googleusercontent.com/d/'+f.id+'=w1200';});
   let cur=0;
   // Dots
   photos.forEach(function(_,i){
@@ -481,7 +481,7 @@ initSlider();
   const data = await r.json();
   const el = document.getElementById('hero-slide-img');
   if(!data.files || !el) return;
-  const photos = data.files.map(f => 'https://drive.google.com/thumbnail?id='+f.id+'&sz=w1200');
+  const photos = data.files.map(f => 'https://lh3.googleusercontent.com/d/'+f.id+'=w1200');
   let cur = 0;
   function show(n){
     el.style.opacity = '0';
