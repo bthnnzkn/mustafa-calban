@@ -13,6 +13,110 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css">
     <script type="module" crossorigin src="/organization/assets/index-ccZkZPIv.js"></script>
     <link rel="stylesheet" crossorigin href="/organization/assets/index-C1p6scVQ.css">
+  <style>
+  /* ── PHOTO SIZING MOBILE ───────────────────── */
+  @media(max-width:767px){
+    /* Service photo cards */
+    .w-full.overflow-hidden[class*="h-56"],.w-full.overflow-hidden[class*="h-64"]{
+      height:62vw !important;
+      max-height:280px;
+    }
+    /* Event section photos */
+    .flex-shrink-0[class*="h-56"]{
+      width:100% !important;
+      height:64vw !important;
+      max-height:300px;
+    }
+    /* Elif featured card */
+    .flex-shrink-0[class*="h-72"]{
+      width:100% !important;
+      height:72vw !important;
+      max-height:340px;
+    }
+    /* Stats section */
+    [class*="grid-cols-4"]{
+      grid-template-columns:repeat(2,1fr) !important;
+    }
+  }
+
+  /* ── RICH ANIMATIONS ──────────────────────── */
+  @keyframes mcFadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:none;}}
+  @keyframes mcFadeLeft{from{opacity:0;transform:translateX(-28px);}to{opacity:1;transform:none;}}
+  @keyframes mcFadeRight{from{opacity:0;transform:translateX(28px);}to{opacity:1;transform:none;}}
+  @keyframes mcScaleIn{from{opacity:0;transform:scale(.93);}to{opacity:1;transform:scale(1);}}
+  @keyframes mcFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
+  @keyframes mcGlowPulse{0%,100%{box-shadow:0 0 0 0 rgba(245,158,11,.3);}60%{box-shadow:0 0 0 12px rgba(245,158,11,0);}}
+  @keyframes mcBarGrow{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+  @keyframes mcScrollBar{to{width:100%;}}
+
+  /* Scroll progress */
+  #mc-scroll-bar{position:fixed;top:0;left:0;height:2.5px;background:linear-gradient(90deg,#f59e0b,#d97706);z-index:9999;width:0;transition:width .1s linear;pointer-events:none;}
+
+  /* Card hover effects */
+  .rounded-2xl.bg-white,.rounded-3xl.bg-white{
+    transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s !important;
+  }
+  .rounded-2xl.bg-white:hover,.rounded-3xl.bg-white:hover{
+    transform:translateY(-5px) scale(1.01);
+    box-shadow:0 18px 50px rgba(0,0,0,.10);
+  }
+
+  /* Photo zoom on card hover */
+  .rounded-2xl.bg-white:hover img,.rounded-3xl.bg-white:hover img{
+    transform:scale(1.06);
+  }
+  .rounded-2xl img,.rounded-3xl img{
+    transition:transform .6s cubic-bezier(.25,.46,.45,.94) !important;
+  }
+
+  /* Team member card */
+  .rounded-full.bg-amber-400{
+    animation:mcGlowPulse 3s ease-in-out infinite;
+  }
+
+  /* Amber underline grow */
+  .border-amber-400,.border-amber-500{
+    animation:mcBarGrow .6s cubic-bezier(.16,1,.3,1) both;
+    transform-origin:left;
+  }
+
+  /* Scroll-triggered fade (JS adds .mc-visible) */
+  .mc-anim{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
+  .mc-anim.mc-visible{opacity:1;transform:none;}
+  .mc-anim-left{opacity:0;transform:translateX(-24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);}
+  .mc-anim-left.mc-visible{opacity:1;transform:none;}
+  .mc-anim-scale{opacity:0;transform:scale(.95);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1);}
+  .mc-anim-scale.mc-visible{opacity:1;transform:scale(1);}
+
+  /* Stagger helpers */
+  .mc-d1{transition-delay:.08s !important;}
+  .mc-d2{transition-delay:.16s !important;}
+  .mc-d3{transition-delay:.24s !important;}
+  .mc-d4{transition-delay:.32s !important;}
+  .mc-d5{transition-delay:.40s !important;}
+
+  /* Button press */
+  button:active,a[href]:active{transform:scale(.97);transition:transform .1s;}
+  </style>
+  <script>
+  // Scroll progress bar
+  window.addEventListener('DOMContentLoaded',function(){
+    var bar=document.createElement('div');bar.id='mc-scroll-bar';document.body.prepend(bar);
+    window.addEventListener('scroll',function(){
+      var h=document.documentElement;
+      var pct=(h.scrollTop||document.body.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+      bar.style.width=pct+'%';
+    },{passive:true});
+
+    // Scroll reveal
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('mc-visible');io.unobserve(e.target);}
+      });
+    },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.mc-anim,.mc-anim-left,.mc-anim-scale').forEach(function(el){io.observe(el);});
+  });
+  </script>
   </head>
   <body>
     <div id="root"></div>
